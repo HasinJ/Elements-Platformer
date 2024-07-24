@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"Elements",
+  "%Name":"Platformer",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -32,9 +32,10 @@
   "MetaData":{
     "IDEVersion":"2024.4.1.152",
   },
-  "name":"Elements",
+  "name":"Platformer",
   "resources":[
     {"id":{"name":"oBall","path":"objects/oBall/oBall.yy",},},
+    {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCursor","path":"objects/oCursor/oCursor.yy",},},
     {"id":{"name":"oMoveableWall","path":"objects/oMoveableWall/oMoveableWall.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},

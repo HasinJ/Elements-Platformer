@@ -22,6 +22,7 @@
     {"name":"oMoveableWall","order":7,"path":"objects/oMoveableWall/oMoveableWall.yy",},
     {"name":"oPlayer","order":3,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oWall","order":5,"path":"objects/oWall/oWall.yy",},
+    {"name":"Room_init","order":1,"path":"rooms/Room_init/Room_init.yy",},
     {"name":"sBall","order":3,"path":"sprites/sBall/sBall.yy",},
     {"name":"sMoveableWall","order":4,"path":"sprites/sMoveableWall/sMoveableWall.yy",},
     {"name":"sPlayerBlock","order":2,"path":"sprites/sPlayerBlock/sPlayerBlock.yy",},

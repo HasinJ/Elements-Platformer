@@ -35,6 +35,7 @@ if (y_dist > y_speed_cap){y_dist = y_speed_cap;}
 if up_key_pressed
 {
 	jump_buffer_time = buffer_time;
+	show_debug_message(up_key_pressed);
 }
 if jump_buffer_time > 0
 {
@@ -47,14 +48,17 @@ else
 }
 	
 
-if(jump_buffer && place_meeting(x, y+1, oWall))
+if(jump_buffer && place_meeting(x, y+1, oWall)) //the +1 offsets the ground and allows us to jump even if we're not really on the ground
 {
-	y_dist = jump_speed;	
+	y_dist = jump_speed;
 }
+
+
 
 //checks the place you're jumping towards
 if (place_meeting(x, y + y_dist, oWall))
 {	
+	//make sure the player isn't stopping too far
 	var least_pixel_distance = .5;
 	var pixel_check = least_pixel_distance * sign(y_dist);
 	while !(place_meeting(x, y + pixel_check, oWall))
@@ -70,7 +74,7 @@ if (place_meeting(x, y, oMoveableWall))
 }
 else
 {
-	
+	vspeed = 0;
 }
 	
 

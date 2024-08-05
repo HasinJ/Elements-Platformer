@@ -1,4 +1,9 @@
 
+function print(msg)
+{
+	show_debug_message(msg);
+}
+
 //x movement
 right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
@@ -10,28 +15,66 @@ move_dir = right_key - left_key;
 if (-1 <= move_dir <= 1)
 {
 	x_dist = move_dir * move_speed
+	var least_pixel_distance = .5;
 	
+	//x + x_dist lets me do something to object before it gets there
 	if (place_meeting(x + x_dist, y, oWall))
 	{
-		//make sure the player isn't stopping too far before the wall
-		var least_pixel_distance = .5;
-		var pixel_check = least_pixel_distance * sign(x_dist)
-		while !(place_meeting(x + pixel_check, y, oWall))
+		//check if there is a slope to climb, and isn't a wall
+		if !(place_meeting(x + x_dist, y - abs(x_dist)-1, oWall)) //basically checking 45 degrees upward (direction we're going)
 		{
-			x += pixel_check;
+			//we only need to fix the y-coordinate, since the x is what the player is controlling
+			while place_meeting(x + x_dist, y, oWall) //confine y-scooting to while we're moving towards that wall, just until we're above it
+			{
+				y -= least_pixel_distance;
+			}
 		}
-		x_dist=0;
+		//no slope
+		else
+		{
+			//make sure the player isn't stopping too far before the wall - scooting the player
+			var pixel_check = least_pixel_distance * sign(x_dist)
+			while !(place_meeting(x + pixel_check, y, oWall))
+			{
+				x += pixel_check;
+			}
+			x_dist=0;
+		}
 	}
+	
+	//go down slopes
+	//1st checks that we're moving down
+	//2nd checks that there isn't a wall beneath
+	//3rd checks checks at a 45 degree slope downward (direction we're falling)
+	//if ( y_dist >=0 ) && ( !place_meeting(x + x_dist, y + 1, oWall) ) && (place_meeting(x + x_dist, y + abs(x_dist) + 1, oWall))
+	//{
+	//	while !place_meeting(x + x_dist, y + least_pixel_distance, oWall)
+	//	{
+			
+	//	}
+	//}
 	
 	x += x_dist;	
 }
 
-
-
 //y movement
+//if coyote_hang_timer > 0
+//{
+//	coyote_hang_timer--;
+//}
+//else
+//{
+//	//apply gravity only when hang time has ended
+//	y_dist += grav;
+//	setOnGround(false);
+//}
+
 y_dist += grav;
+
+//cap jump height
 if (y_dist > y_speed_cap){y_dist = y_speed_cap;}
 
+//jump buffer
 if up_key_pressed
 {
 	jump_buffer_time = buffer_time;
@@ -45,11 +88,14 @@ if jump_buffer_time > 0
 else
 {
 	jump_buffer = false;
+	jump_buffer_time = 0;
 }
-	
 
-if(jump_buffer && place_meeting(x, y+1, oWall)) //the +1 offsets the ground and allows us to jump even if we're not really on the ground
+
+if(jump_buffer && on_ground) 
 {
+	jump_buffer = false;
+	jump_buffer_time = 0;
 	y_dist = jump_speed;
 }
 
@@ -68,10 +114,22 @@ if (place_meeting(x, y + y_dist, oWall))
 	y_dist = 0;
 }
 
+//the +1 offsets the ground and allows us to jump even if we're not really on the ground
+//y > 0 equates to gravity 
+if y_dist >= 0 && place_meeting(x, y+1, oWall) 
+{
+	setOnGround(true);
+}
+else if !place_meeting(x, y+1, oWall) 
+{
+	setOnGround(false);	
+}
+
 if (place_meeting(x, y, oMoveableWall))
 {
 	vspeed = oMoveableWall.vspeed;
 }
+
 else
 {
 	vspeed = 0;

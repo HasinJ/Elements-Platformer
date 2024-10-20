@@ -24,21 +24,35 @@ if (-1 <= move_dir <= 1)
 		if !(place_meeting(x + x_dist, y - abs(x_dist)-1, oWall)) //basically checking 45 degrees upward (direction we're going)
 		{
 			//we only need to fix the y-coordinate, since the x is what the player is controlling
-			while place_meeting(x + x_dist, y, oWall) //confine y-scooting to while we're moving towards that wall, just until we're above it
+			while place_meeting(x + x_dist, y, oWall) //confine y-scooting to while we're moving towards that wall, just until we're above it, want to be above it
 			{
 				y -= least_pixel_distance;
 			}
 		}
-		//no slope
+		
 		else
 		{
-			//make sure the player isn't stopping too far before the wall - scooting the player
-			var pixel_check = least_pixel_distance * sign(x_dist)
-			while !(place_meeting(x + pixel_check, y, oWall))
+			//ceiling slope
+			if !place_meeting(x + x_dist, y + abs(x_dist) + 1, oWall)  //checking 45 downward if there isn't a wall, so I can scoot the player towards the right direction
 			{
-				x += pixel_check;
+				while place_meeting(x + x_dist, y, oWall)
+				{
+					//put oPlayer below oWall
+					y += least_pixel_distance;
+				}
 			}
-			x_dist=0;
+			
+			else
+			{
+				//no slope
+				//make sure the player isn't stopping too far before the wall - scooting the player
+				var pixel_check = least_pixel_distance * sign(x_dist)
+				while !(place_meeting(x + pixel_check, y, oWall))
+				{
+					x += pixel_check;
+				}
+				x_dist=0;
+			}
 		}
 	}
 	
@@ -46,13 +60,13 @@ if (-1 <= move_dir <= 1)
 	//1st checks that we're moving down
 	//2nd checks that there isn't a wall beneath
 	//3rd checks checks at a 45 degree slope downward (direction we're falling)
-	//if ( y_dist >=0 ) && ( !place_meeting(x + x_dist, y + 1, oWall) ) && (place_meeting(x + x_dist, y + abs(x_dist) + 1, oWall))
-	//{
-	//	while !place_meeting(x + x_dist, y + least_pixel_distance, oWall)
-	//	{
-			
-	//	}
-	//}
+	if ( y_dist >=0 ) && ( !place_meeting(x + x_dist, y + 1, oWall) ) && (place_meeting(x + x_dist, y + abs(x_dist) + 1, oWall))
+	{
+		while !place_meeting(x + x_dist, y + least_pixel_distance, oWall)
+		{
+			y += least_pixel_distance;
+		}
+	}
 	
 	x += x_dist;	
 }

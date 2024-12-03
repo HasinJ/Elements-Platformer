@@ -1,9 +1,27 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0" version="24.9.2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0" version="24.9.2">
   <diagram name="Page-1" id="BnbvyaOT_vO8Rth5V9e3">
-    <mxGraphModel>
+    <mxGraphModel dx="1102" dy="596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-1" value="Some losses set us free." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="18" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBGmrAgM-QVq-BA463TX-2" value="Pain makes your worth weigh in gold" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="48" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBGmrAgM-QVq-BA463TX-3" value="Is there anything so undoing than a daughter?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="78" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBGmrAgM-QVq-BA463TX-4" value="People overestimate what they can do in a day, and underestimate what people can do in a year." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="5" y="108" width="550" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBGmrAgM-QVq-BA463TX-5" value="With every right, comes responsibility." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="5" y="138" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBGmrAgM-QVq-BA463TX-6" value="Are you doing it to facilitate growth, or to become famous?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="168" width="340" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

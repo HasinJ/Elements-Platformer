@@ -1,26 +1,74 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0" version="24.9.2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="24.8.3">
   <diagram name="Page-1" id="BnbvyaOT_vO8Rth5V9e3">
-    <mxGraphModel dx="1102" dy="596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="dBGmrAgM-QVq-BA463TX-1" value="Some losses set us free." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="10" y="18" width="160" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-1" value="Some losses set us free." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="590" y="520" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dBGmrAgM-QVq-BA463TX-2" value="Pain makes your worth weigh in gold" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="10" y="48" width="220" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-2" value="Pain makes your worth weigh in gold" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="180" y="520" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dBGmrAgM-QVq-BA463TX-3" value="Is there anything so undoing than a daughter?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="10" y="78" width="270" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-3" value="Is there anything so undoing than a son/daughter?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="315" y="440" width="290" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dBGmrAgM-QVq-BA463TX-4" value="People overestimate what they can do in a day, and underestimate what people can do in a year." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="5" y="108" width="550" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-4" value="People overestimate what they can do in a day, and underestimate what they can do in a year." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="200" y="320" width="520" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dBGmrAgM-QVq-BA463TX-5" value="With every right, comes responsibility." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="5" y="138" width="230" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-5" value="With every right, comes responsibility." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="80" width="230" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dBGmrAgM-QVq-BA463TX-6" value="Are you doing it to facilitate growth, or to become famous?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="10" y="168" width="340" height="30" as="geometry" />
+        <mxCell id="dBGmrAgM-QVq-BA463TX-6" value="Are you doing it to facilitate growth, or to become famous?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="20" y="130" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-1" value="Obstacles are opportunities." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="375" y="380" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-2" value="Luck is preparation meeting opportunity" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="345" y="350" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-3" value="With every right comes a responsibility." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="190" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-4" value="Action over word." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-5" value="If there&#39;s a need for change, it&#39;ll happen. If not, there&#39;ll be excuses." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="50" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-6" value="The truth can be harmful; whatever goes around comes around." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.001;exitY=1.08;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="dBGmrAgM-QVq-BA463TX-3" target="dBGmrAgM-QVq-BA463TX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="470" as="sourcePoint" />
+            <mxPoint x="500" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.002;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.295;entryY=0.12;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dBGmrAgM-QVq-BA463TX-3" target="dBGmrAgM-QVq-BA463TX-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="450" as="sourcePoint" />
+            <mxPoint x="500" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-9" value="The only thing guaranteed in this life is death." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="325" y="408" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.518;exitY=0.947;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="dBGmrAgM-QVq-BA463TX-3" target="lUODGQ_9CcD3UOm_i-vy-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="350" as="sourcePoint" />
+            <mxPoint x="470" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-11" value="The longer the wait, the more truth reveals itself." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="600" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-12" value="In zombies, he had put easter eggs not in the form of data mining. It&#39;s an easter egg on culture." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="530" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lUODGQ_9CcD3UOm_i-vy-14" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="615" y="78" width="50" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

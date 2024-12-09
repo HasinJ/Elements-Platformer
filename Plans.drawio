@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0" version="25.0.3">
   <diagram name="Page-1" id="BnbvyaOT_vO8Rth5V9e3">
-    <mxGraphModel dx="2017" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1805" dy="507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,19 +17,19 @@
           <mxGeometry x="320" y="440" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dBGmrAgM-QVq-BA463TX-4" value="People overestimate what they can do in a day, and underestimate what they can do in a year." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="200" y="220" width="520" height="30" as="geometry" />
+          <mxGeometry x="230" y="240" width="520" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dBGmrAgM-QVq-BA463TX-5" value="With every right, comes responsibility." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="345" y="320" width="230" height="30" as="geometry" />
+          <mxGeometry x="345" y="330" width="230" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dBGmrAgM-QVq-BA463TX-6" value="Are you doing it to facilitate growth, or to become famous?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="290" y="410" width="340" height="30" as="geometry" />
+          <mxGeometry x="290" y="390" width="340" height="30" as="geometry" />
         </mxCell>
         <mxCell id="lUODGQ_9CcD3UOm_i-vy-1" value="Obstacles are opportunities." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="375" y="290" width="170" height="30" as="geometry" />
+          <mxGeometry x="375" y="300" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="lUODGQ_9CcD3UOm_i-vy-2" value="Luck is preparation meeting opportunity" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="345" y="260" width="230" height="30" as="geometry" />
+          <mxGeometry x="345" y="270" width="230" height="30" as="geometry" />
         </mxCell>
         <mxCell id="lUODGQ_9CcD3UOm_i-vy-4" value="Action over word." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="130" y="440" width="120" height="30" as="geometry" />
@@ -81,6 +81,83 @@
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-2" value="Raise your words not your voice. It&#39;s the rain that grows the flower, not the thunder." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="220" y="360" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-5" target="A49KD2nKRxiiyZH7kdmM-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-5" value="People overestimate what they can do in a day, and underestimate what they can do in a year." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="910" y="675" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-7" target="A49KD2nKRxiiyZH7kdmM-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-7" target="A49KD2nKRxiiyZH7kdmM-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-7" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="350" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-8" value="&lt;div&gt;Master chief never needed to show his face, it was up to us to paint his picture&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-5" y="90" width="430" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-10" value="Desire: to live until a void gets filled" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1295" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-11" target="A49KD2nKRxiiyZH7kdmM-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-11" value="&lt;div&gt;Show- Father is dead&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-14" target="A49KD2nKRxiiyZH7kdmM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-14" value="&lt;div&gt;Show- Character mourns his death&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-16" target="A49KD2nKRxiiyZH7kdmM-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-16" value="&lt;div&gt;Show- life goes on anyway... character does things usually done with Father... but these things weren&#39;t done just to live It was a bigger idea. &lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1455" y="490" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-18" value="Like a muddied spring or polluted fountain are the righteous who give way to the wicked." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="115" width="480" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A49KD2nKRxiiyZH7kdmM-22" target="A49KD2nKRxiiyZH7kdmM-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-22" value="&lt;div&gt;Show- Character shows blueprint to a mansion that they were both building &lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-25" value="&lt;div&gt;Show- Life goes on anyway... but the character gets angry. Thinking what&#39;s the point, it&#39;s never going to get done.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="800" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-28" value="&lt;div&gt;DLC thoughts&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="30" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-29" value="&lt;div&gt;Anecdotes&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-28">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-30" value="Player filling in the gaps" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-28">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-31" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-28">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="30" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-33" value="Emotion bar - affects gameplay attributes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-34" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

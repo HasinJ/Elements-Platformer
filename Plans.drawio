@@ -149,9 +149,9 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-31" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-28">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" collapsed="1" parent="1">
-          <mxGeometry x="740" y="30" width="120" height="30" as="geometry">
-            <mxRectangle x="740" y="30" width="290" height="190" as="alternateBounds" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="30" width="290" height="270" as="geometry">
+            <mxRectangle x="740" y="30" width="120" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-33" value="Emotion bar - affects gameplay attributes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
@@ -160,8 +160,8 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-34" value="Objective constantly changes&lt;br&gt;&lt;div&gt;- Carry obj&lt;/div&gt;&lt;div&gt;- Kill obj&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
           <mxGeometry y="60" width="290" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Slow motion timer when controlling objects&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Using one stick for character and another stick for moving elements&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
-          <mxGeometry y="120" width="290" height="70" as="geometry" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Slow motion timer when controlling objects&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Using one stick for character and another stick for moving elements&lt;/div&gt;&lt;div&gt;- instead of having another input, when the character goes near the eleement, that element&#39;s attribute affects the character&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-32">
+          <mxGeometry y="120" width="290" height="150" as="geometry" />
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-39" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
           <mxGeometry x="-825" y="200" width="800" height="390" as="geometry" />

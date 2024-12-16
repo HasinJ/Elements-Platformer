@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oBall",
+  "%Name":"oWaterBall",
   "eventList":[],
   "managed":true,
-  "name":"oBall",
+  "name":"oWaterBall",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBall",
-    "path":"sprites/sBall/sBall.yy",
+    "name":"sFireBall",
+    "path":"sprites/sFireBall/sFireBall.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -92,7 +92,6 @@ if (y_dist > y_speed_cap){y_dist = y_speed_cap;}
 if up_key_pressed
 {
 	jump_buffer_time = buffer_time;
-	show_debug_message(up_key_pressed);
 }
 if jump_buffer_time > 0
 {
@@ -141,12 +140,12 @@ else if !place_meeting(x, y+1, oWall)
 
 if (place_meeting(x, y, oMoveableWall))
 {
-	vspeed = oMoveableWall.vspeed;
+	speed = oMoveableWall.speed;
 }
 
 else
 {
-	vspeed = 0;
+	speed = 0;
 }
 	
 

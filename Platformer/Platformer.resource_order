@@ -31,5 +31,6 @@
     {"name":"sSlope45","order":5,"path":"sprites/sSlope45/sSlope45.yy",},
     {"name":"sWall","order":1,"path":"sprites/sWall/sWall.yy",},
     {"name":"sWaterBall","order":6,"path":"sprites/sWaterBall/sWaterBall.yy",},
+    {"name":"sWaterSlide","order":7,"path":"sprites/sWaterSlide/sWaterSlide.yy",},
   ],
 }

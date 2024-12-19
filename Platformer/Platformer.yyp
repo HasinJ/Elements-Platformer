@@ -51,6 +51,7 @@
     {"id":{"name":"sSlope45","path":"sprites/sSlope45/sSlope45.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sWaterBall","path":"sprites/sWaterBall/sWaterBall.yy",},},
+    {"id":{"name":"sWaterSlide","path":"sprites/sWaterSlide/sWaterSlide.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

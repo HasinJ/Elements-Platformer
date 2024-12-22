@@ -1,7 +1,7 @@
 
 right_key = keyboard_check(ord("D"));
 left_key = keyboard_check(ord("A"));
-up_key_pressed = keyboard_check_pressed(vk_space);
+up_key_pressed = keyboard_check_pressed(ord("W"));
 move_dir = right_key - left_key;
 y_dist += grav;
 
@@ -25,23 +25,43 @@ if (-1 <= move_dir <= 1)
 	x += x_dist;
 }
 
+if on_ground
+{
+	jump_count = 0;
+}
+else
+{
+	//if player in the air, count that as a jump
+	if jump_count == 0 {jump_count++;};
+}
+
 
 if up_key_pressed
 {
+	//stores jump
 	jump_buffer = true;
 	jump_buffer_time = starting_jump_buffer_time;
 }
 
-if jump_buffer == true
+//timer on jump storage
+if jump_buffer_time <= 0
 {
-	if jump_buffer_time <= 0 {jump_buffer = false;}
-	else jump_buffer_time--;
+	jump_buffer = false;
+}
+else
+{
+	jump_buffer_time--;
 }
 
-
-if jump_buffer == true && place_meeting(x, y + 1, oWall)
+if jump_buffer == true && jump_count < jump_max
 {
+	//Reset the buffer, since we're done jumping
+	jump_buffer = false;
+	jump_buffer_time = 0;
+	
+	//jump
 	y_dist = jump_speed;
+	jump_count++;
 }
 
 
@@ -56,6 +76,16 @@ if (place_meeting(x, y + y_dist, oWall))
 		y += least_pixel_distance * sign(y_dist);
 	}
 	y_dist = 0;
+}
+
+//check if on ground
+if y_dist >= 0 && place_meeting(x,y+1,oWall)
+{
+	on_ground = true;
+}
+else
+{
+	on_ground =  false;
 }
 
 y += y_dist;

@@ -7,7 +7,18 @@ function print(msg)
 //x movement
 right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
-up_key_pressed = keyboard_check_pressed(vk_up);
+
+if (place_meeting(x, y+1, oMoveableWall))
+{
+	up_key_pressed = 0;
+	
+}
+
+else
+{
+	up_key_pressed = keyboard_check_pressed(vk_up);
+}
+	
 
 //-1 for left, 0 for nothing, 1 for right
 move_dir = right_key - left_key;
@@ -71,17 +82,7 @@ if (-1 <= move_dir <= 1)
 	x += x_dist;	
 }
 
-//y movement
-//if coyote_hang_timer > 0
-//{
-//	coyote_hang_timer--;
-//}
-//else
-//{
-//	//apply gravity only when hang time has ended
-//	y_dist += grav;
-//	setOnGround(false);
-//}
+
 
 y_dist += grav;
 
@@ -138,16 +139,7 @@ else if !place_meeting(x, y+1, oWall)
 	setOnGround(false);	
 }
 
-if (place_meeting(x, y, oMoveableWall))
-{
-	speed = oMoveableWall.speed;
-}
 
-else
-{
-	speed = 0;
-}
-	
 
 y += y_dist;
 

@@ -8,6 +8,8 @@ function print(msg)
 right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
 
+
+//temp stuff until I figure out how to move the player up
 if (place_meeting(x, y+1, oMoveableWall))
 {
 	up_key_pressed = 0;
@@ -87,7 +89,10 @@ if (-1 <= move_dir <= 1)
 y_dist += grav;
 
 //cap jump height
-if (y_dist > y_speed_cap){y_dist = y_speed_cap;}
+if (y_dist > y_speed_cap)
+{
+	y_dist = y_speed_cap;
+}
 
 //jump buffer
 if up_key_pressed
@@ -127,6 +132,38 @@ if (place_meeting(x, y + y_dist, oWall))
 	}
 	y_dist = 0;
 }
+
+
+//Floor Y collision
+
+//Check for solid and semisolid platforms under me
+var _maxYspd = max(0,y_dist);
+var _objects_touching = ds_list_create(); 
+var _objects_check_for = array_create(0);
+_objects_check_for[0] = oMoveableWall;
+
+// Check and add objects to list
+  // x - current x degree, left + right doesn't really matter here
+  // y
+	// + 1               - in the case y is 0
+	// + _maxYspd        - in the case that the player is moving, it only tracks downwards
+	// + moveplatMaxYspd - in the case that the platformer is moving faster than the player can potentially move
+var _size = instance_place_list(x, y+1 + _maxYspd + move_wall_max_y_spd, _objects_check_for, _objects_touching, false);
+
+// Loop through colliding instances and only return if it's top is below player
+for (var i = 0; i < _size; i++)
+{
+	var _inst = _objects_touching[| i];
+	
+	////return a solid wall or any semisolid walls that are below the player
+	//if _inst.object_index == oWall || object_is_ancestor(_inst.object_index, oWall)
+	//{
+		
+	//}
+	
+}
+
+
 
 //the +1 offsets the ground and allows us to jump even if we're not really on the ground
 //y > 0 equates to gravity 

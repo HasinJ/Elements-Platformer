@@ -146,7 +146,7 @@ _objects_check_for[0] = oMoveableWall;
   // x - current x degree, left + right doesn't really matter here
   // y
 	// + 1               - in the case y is 0
-	// + _maxYspd        - in the case that the player is moving, it only tracks downwards
+	// + _maxYspd        - in the case wthat the player is moving, it only tracks downwards
 	// + moveplatMaxYspd - in the case that the platformer is moving faster than the player can potentially move
 var _size = instance_place_list(x, y+1 + _maxYspd + move_wall_max_y_spd, _objects_check_for, _objects_touching, false);
 
@@ -155,11 +155,19 @@ for (var i = 0; i < _size; i++)
 {
 	var _inst = _objects_touching[| i];
 	
-	////return a solid wall or any semisolid walls that are below the player
-	//if _inst.object_index == oWall || object_is_ancestor(_inst.object_index, oWall)
-	//{
-		
-	//}
+	////return any kind of walls that are below the player
+	if _inst.object_index == oMoveableWall 
+	|| object_is_ancestor(_inst.object_index, oMoveableWall)
+	|| floor(bbox_bottom) <= ceil(_inst.bbox_top - _inst.y_dist) //if player is ABOVE the wall (but this gets the wall's original position before it moved)
+	{
+		var instance_future_y_pos = _inst.bbox_top + _inst.y_dist; //first, get the position of the wall in the next frame,
+		if !instance_exists(my_floor_plat)
+		|| instance_future_y_pos <= my_floor_plat.bbox_top + my_floor_plat.y_dist // compare with the future position of the current platform we think we're on
+		|| instance_future_y_pos <= bbox_bottom // if it's above player
+		{
+			my_floor_plat = _inst;
+		}
+	}
 	
 }
 

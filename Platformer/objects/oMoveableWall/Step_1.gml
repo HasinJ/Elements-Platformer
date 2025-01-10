@@ -78,7 +78,7 @@ if jump_buffer == true && jump_count < jump_max
 //checks the place you're jumping towards
 if (place_meeting(x, y + y_dist, oWall))
 {	
-	//make sure the player isn't stopping too far - scooting object towards ground
+	//make sure the player isn't stopping too many pixels far
 	var least_pixel_distance = .5;
 	var pixel_check = least_pixel_distance * sign(y_dist);
 	while !(place_meeting(x, y + pixel_check, oWall))
@@ -89,38 +89,6 @@ if (place_meeting(x, y + y_dist, oWall))
 }
 
 
-
-////Floor Y collision
-
-////Check for solid and semisolid platforms under me
-//var _maxYspd = max(0,y_dist);
-//var _objects_touching = ds_list_create(); 
-//var _objects_check_for = array_create(0);
-//_objects_check_for[0] = oWall;
-
-//// Check and add objects to list
-//  // x - current x degree, left + right doesn't really matter here
-//  // y
-//	// + 1               - in the case y is 0
-//	// + _maxYspd        - in the case that the player is moving, it only tracks downwards
-//	// + moveplatMaxYspd - in the case that the platformer is moving faster than the player can potentially move
-//var _size = instance_place_list(x, y+1 + _maxYspd + move_wall_max_y_spd, _objects_check_for, _objects_touching, false);
-
-//// Loop through colliding instances and only return if it's top is below player
-//for (var i = 0; i < _size; i++)
-//{
-//	var _inst = _objects_touching[| i];
-//	if floor(bbox_bottom) <= ceil(_inst.bbox_top) && destroyable && floor()
-//	{
-//		show_debug_message("found");
-//		if (on_ground == false)
-//		{
-//			x = xstart;
-//			y = ystart;
-//		}
-//	}
-	
-//}
 
 if y_dist >= 0 && place_meeting(x, y+1, oWall) 
 {

@@ -16,11 +16,14 @@
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"Note1","order":15,"path":"notes/Note1/Note1.yy",},
+    {"name":"Note2","order":17,"path":"notes/Note2/Note2.yy",},
     {"name":"oCamera","order":8,"path":"objects/oCamera/oCamera.yy",},
     {"name":"oCursor","order":1,"path":"objects/oCursor/oCursor.yy",},
     {"name":"oFireBall","order":6,"path":"objects/oFireBall/oFireBall.yy",},
     {"name":"oMoveableWall","order":7,"path":"objects/oMoveableWall/oMoveableWall.yy",},
     {"name":"oPlayer","order":3,"path":"objects/oPlayer/oPlayer.yy",},
+    {"name":"oPlayerV2","order":11,"path":"objects/oPlayerV2/oPlayerV2.yy",},
     {"name":"oSlope45","order":9,"path":"objects/oSlope45/oSlope45.yy",},
     {"name":"oWall","order":5,"path":"objects/oWall/oWall.yy",},
     {"name":"oWaterBall","order":10,"path":"objects/oWaterBall/oWaterBall.yy",},
@@ -32,5 +35,6 @@
     {"name":"sWall","order":1,"path":"sprites/sWall/sWall.yy",},
     {"name":"sWaterBall","order":6,"path":"sprites/sWaterBall/sWaterBall.yy",},
     {"name":"sWaterSlide","order":7,"path":"sprites/sWaterSlide/sWaterSlide.yy",},
+    {"name":"Timeline1","order":16,"path":"timelines/Timeline1/Timeline1.yy",},
   ],
 }

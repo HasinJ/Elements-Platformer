@@ -34,3 +34,6 @@ event_inherited();
 dir = 0;
 rotSpd = 360 / 45;
 radius = 32;
+y_dist = 0;
+_player = noone;
+grav = .275;

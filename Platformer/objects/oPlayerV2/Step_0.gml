@@ -9,10 +9,10 @@ function applyGravity()
 	y_dist += grav;
 }
 
-function jumpCollision()
+function wallScoot()
 {
 	//checks the place you're jumping towards
-	if (place_meeting(x, y + y_dist, oWall))
+	if (place_meeting(x, y + y_dist, oWall) && following_plat==false)
 	{	
 		//make sure the player isn't stopping too far
 		var least_pixel_distance = .5; //may want to change this value based on res
@@ -21,12 +21,12 @@ function jumpCollision()
 		{
 			y += least_pixel_distance * sign(y_dist);
 		}
-		y = floor(y);
+		y = floor(y); //to avoid being too far from obj or clipping inside it
 		y_dist = 0;
 	}
 }
 
-function jump()
+function jumpButtonCheck()
 {
 	//jump buffer
 	if up_key_pressed
@@ -50,7 +50,17 @@ function jump()
 		jump_buffer = false;
 		jump_buffer_time = 0;
 		y_dist = jump_speed;
-		setOnGround(false);
+		bringPlatform();
+		canJump(false);
+	}
+}
+
+function bringPlatform()
+{
+	if my_floor_plat != noone
+	{
+		following_plat = true;
+		my_floor_plat.startTracking(id);
 	}
 }
 
@@ -121,9 +131,9 @@ if (-1 <= move_dir <= 1)
 	x += x_dist;
 }
 
-
 applyGravity();
 
+//collision check
 var _maxYspd = max(0,y_dist);
 var _objects_touching = ds_list_create(); 
 var _objects_check_for = array_create(0);
@@ -133,15 +143,23 @@ var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _o
 
 for (var i = 0; i < _size; i++)
 {
+	//instance is of type 'ref'
 	var _instance = _objects_touching[| i];
-	print(typeof(_instance));
+	if _instance.object_index == oMoveableWall
+	{
+		canJump(true);
+		my_floor_plat = _instance;
+	}
+	else
+	{
+		canJump(false);
+	}
+	
 }
 ds_list_destroy(_objects_touching);
 
-jump();
-jumpCollision();
-
-
+jumpButtonCheck();
+wallScoot();
 
 y += y_dist;
 

@@ -1,11 +1,10 @@
 
-function setOnGround(_val = true)
+function canJump(_val = true)
 {
 	on_ground = _val;
 	if on_ground == true 
 	{
 		coyote_hang_timer = coyote_hang_frames;
-		my_floor_plat = noone;
 	}
 	else 
 	{
@@ -40,6 +39,7 @@ coyote_jump_timer = 0;
 
 //Moving platform
 my_floor_plat = noone;
+following_plat = false;
 move_wall_x_spd = 0;
 move_wall_max_y_spd = 8;
 can_jump = false;

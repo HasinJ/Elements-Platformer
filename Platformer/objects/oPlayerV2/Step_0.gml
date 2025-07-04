@@ -4,6 +4,14 @@ function print(msg)
 	show_debug_message(msg);
 }
 
+function escReset()
+{
+	if keyboard_check_pressed(vk_escape)
+	{
+		room_restart();
+	}
+}
+
 function applyGravity()
 {
 	y_dist += grav;
@@ -12,7 +20,7 @@ function applyGravity()
 function wallScoot()
 {
 	//checks the place you're jumping towards
-	if (place_meeting(x, y + y_dist, oWall) && following_plat==false)
+	if (place_meeting(x, y + y_dist, oWall))
 	{	
 		//make sure the player isn't stopping too far
 		var least_pixel_distance = .5; //may want to change this value based on res
@@ -28,6 +36,12 @@ function wallScoot()
 
 function jumpButtonCheck()
 {
+	
+	if (on_ground)
+	{
+		jump_count = 0;
+	}
+	
 	//jump buffer
 	if up_key_pressed
 	{
@@ -44,15 +58,17 @@ function jumpButtonCheck()
 		jump_buffer_time = 0;
 	}
 	
-	if(jump_buffer && on_ground) 
+	if(jump_buffer && on_ground && jump_count < jump_max) 
 	{
 		//print("jumping")
 		jump_buffer = false;
 		jump_buffer_time = 0;
 		y_dist = jump_speed;
+		jump_count++;
 		bringPlatform();
-		canJump(false);
 	}
+
+	
 }
 
 function bringPlatform()
@@ -63,6 +79,14 @@ function bringPlatform()
 		my_floor_plat.startTracking(id);
 	}
 }
+
+
+
+
+
+
+
+escReset();
 
 //x movement
 right_key = keyboard_check(vk_right);
@@ -99,6 +123,7 @@ if (-1 <= move_dir <= 1)
 				{
 					//put oPlayer below oWall
 					y += least_pixel_distance;
+					
 				}
 			}
 			
@@ -137,7 +162,7 @@ applyGravity();
 var _maxYspd = max(0,y_dist);
 var _objects_touching = ds_list_create(); 
 var _objects_check_for = array_create(0);
-array_push(_objects_check_for, oMoveableWall);
+array_push(_objects_check_for, oMoveableWall, oWall);
 
 var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _objects_touching, false);
 
@@ -153,13 +178,16 @@ for (var i = 0; i < _size; i++)
 	else
 	{
 		canJump(false);
+		my_floor_plat = _instance;
 	}
+	
 	
 }
 ds_list_destroy(_objects_touching);
 
 jumpButtonCheck();
 wallScoot();
+
 
 y += y_dist;
 

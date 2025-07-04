@@ -26,6 +26,8 @@ jump_speed = -7.15;
 jump_buffer_time = 0;
 jump_buffer = false;
 buffer_time = 3;
+jump_count = 0;
+jump_max = 2;
 on_ground = false;
 
 //Hang Time

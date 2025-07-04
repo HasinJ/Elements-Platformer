@@ -7,70 +7,39 @@ function trackPlayer(instance)
 {
 	if instance != noone
 	{
-		//offset mouse for centered collision
-			//8 because half of height sprite, may want to change later
-			//in other words, I chose 8 so that the object ONLY starts to move when the mouse is 8 pixels away from the center of the obj
-		
-		y_to_move = instance.y + lengthdir_y(16, point_direction(x,y,x,instance.y));
-		show_debug_message(grav);
-		
-		y_dist = distance_to_point(x,y_to_move);
-		move_towards_point(x, y_dist, instance.y_dist);
-		show_debug_message(y_dist);
-		//y_dist += grav;
-		
-		
-		//speed = 0;
-		////offset object since collision is in the center
-		//y_to_move = ystart + lengthdir_y(8, point_direction(x,y,x,ystart));
-		
-		//distance = distance_to_point(x, y_to_move)
-		//if distance > 2
-		//{
-		//	move_towards_point(x, y_start, grav);
-		//}
-		//else
-		//{
-		//	speed = 0;
-		//	y = ystart;
-		//}
-		
-		////variable move speed since object is moving and we don't want to clip into player
-		//distance = distance_to_point(x, y_to_move);
-		//if distance > 4
-		//{
-		//	y_dist = instance. + (distance*0.1);
-		//	move_towards_point(x, y_to_move, y_dist);
-		//}
-		//else
-		//{
-		//	speed = 0;
-		//}	
+		y = instance.bbox_bottom+16;
+		x = instance.x;
 	}
-
-	//resets object back to starting position (with offset)
-	//else
-	//{
-	//	speed = 0;
-	//	//offset object since collision is in the center
-	//	y_to_move = y_start + lengthdir_y(8, point_direction(x,y,x,y_start));
-	//	distance = distance_to_point(x, y_to_move);
-	//	if distance > 2
-	//	{
-	//		move_towards_point(x, y_start, grav);
-	//	}
-	//	else
-	//	{
-	//		speed = 0;
-	//		y = y_start;
-	//	}
-	//}
 }
-
 
 if _player!=noone
 {
 	trackPlayer(_player);
 }
 
-//y+=y_dist;
+//collision check
+var _maxYspd = max(0,y_dist);
+var _objects_touching = ds_list_create(); 
+var _objects_check_for = array_create(0);
+array_push(_objects_check_for, oWall);
+
+var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _objects_touching, false);
+
+for (var i = 0; i < _size; i++)
+{
+	
+	//instance is of type 'ref'
+	var _instance = _objects_touching[| i];
+	if _instance.object_index==oWall && _player!=noone
+	{
+		ds_list_destroy(_objects_touching);
+		instance_destroy();
+	}
+	else
+	{
+		my_floor_plat = _instance;
+	}
+}
+ds_list_destroy(_objects_touching);
+
+y+=y_dist;

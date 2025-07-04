@@ -37,3 +37,4 @@ radius = 32;
 y_dist = 0;
 _player = noone;
 grav = .275;
+my_floor_plat = noone;

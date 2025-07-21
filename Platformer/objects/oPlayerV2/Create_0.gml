@@ -1,8 +1,8 @@
 
 function canJump(_val = true)
 {
-	on_ground = _val;
-	if on_ground == true 
+	on_earth = _val;
+	if on_earth == true 
 	{
 		coyote_hang_timer = coyote_hang_frames;
 	}
@@ -28,7 +28,7 @@ jump_buffer = false;
 buffer_time = 3;
 jump_count = 0;
 jump_max = 2;
-on_ground = false;
+on_earth = false;
 
 //Hang Time
 //timers that transition between conditions

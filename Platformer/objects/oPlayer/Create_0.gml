@@ -1,8 +1,8 @@
 
 function setOnGround(_val = true)
 {
-	on_ground = _val;
-	if on_ground == true 
+	on_earth = _val;
+	if on_earth == true 
 	{
 		coyote_hang_timer = coyote_hang_frames;
 		my_floor_plat = noone;
@@ -27,7 +27,7 @@ jump_speed = -7.15;
 jump_buffer_time = 0;
 jump_buffer = false;
 buffer_time = 3;
-on_ground = false;
+on_earth = false;
 
 //Hang Time
 //timers that transition between conditions

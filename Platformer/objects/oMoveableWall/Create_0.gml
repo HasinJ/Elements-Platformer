@@ -1,28 +1,4 @@
-//mouse_track = false;
-//y_cap = -150;
-//y_dist = 0;
-//x_dist = 0;
-//grav = .275;
-//move_speed = 0.5;
 
-////jumping stuff
-//jump_speed = -7.15;
-//on_ground = false;
-//jumped = false;
-	
-//	//jump buffer
-//	jump_buffer = false;
-//	jump_buffer_time = 0;
-//	starting_jump_buffer_time = 3;
-
-//    //double jump
-//	jump_count = 0;
-//	jump_max = 1;
-	
-//	//jump hold
-//	jump_hold = 0;
-//	jump_hold_timer = 0;
-//	startiing_jump_hold_timer = 18;
 	
 ////Moving platform
 //my_floor_plat = noone;
@@ -38,3 +14,16 @@ y_dist = 0;
 _player = noone;
 grav = .275;
 my_floor_plat = noone;
+up_key_pressed = 0;
+
+
+//jump stuff
+grav = .275;
+y_speed_cap = 8;
+jump_speed = -7.15;
+jump_buffer_time = 0;
+jump_buffer = false;
+buffer_time = 3;
+jump_count = 0;
+jump_max = 2;
+on_earth = false;

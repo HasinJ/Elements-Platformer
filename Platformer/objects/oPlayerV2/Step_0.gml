@@ -20,27 +20,21 @@ function applyGravity()
 function wallScoot()
 {
 	//checks the place you're jumping towards
-	if (place_meeting(x, y + y_dist, oWall))
-	{	
-		//make sure the player isn't stopping too far
-		var least_pixel_distance = .5; //may want to change this value based on res
-		var pixel_check = least_pixel_distance * sign(y_dist);
-		while !(place_meeting(x, y + pixel_check, oWall))
-		{
-			y += least_pixel_distance * sign(y_dist);
-		}
-		y = floor(y); //to avoid being too far from obj or clipping inside it
-		y_dist = 0;
-	}
+
 }
 
 function jumpButtonCheck()
 {
 	
-	if (on_ground)
+	if (on_earth)
 	{
 		jump_count = 0;
 	}
+	else
+	{
+		jump_count = jump_max;
+	}
+	
 	
 	//jump buffer
 	if up_key_pressed
@@ -58,16 +52,24 @@ function jumpButtonCheck()
 		jump_buffer_time = 0;
 	}
 	
-	if(jump_buffer && on_ground && jump_count < jump_max) 
+	if(jump_buffer && jump_count < jump_max) 
 	{
-		//print("jumping")
-		jump_buffer = false;
-		jump_buffer_time = 0;
-		y_dist = jump_speed;
-		jump_count++;
-		bringPlatform();
+		if jump_count == 1
+		{
+			//print("jumping")
+			jump_buffer = false;
+			jump_buffer_time = 0;
+			y_dist = jump_speed;
+			jump_count++;
+			show_debug_message("jumping");
+			bringPlatform();
+		}
+		else if jump_count == 2
+		{
+			
+		}
+		
 	}
-
 	
 }
 
@@ -75,16 +77,17 @@ function bringPlatform()
 {
 	if my_floor_plat != noone
 	{
-		following_plat = true;
 		my_floor_plat.startTracking(id);
+		following_plat = true;
 	}
 }
 
-
-
-
-
-
+function stopFollowingMe()
+{
+	my_floor_plat = noone;
+	following_plat = false;
+}
+	
 
 escReset();
 
@@ -160,7 +163,7 @@ applyGravity();
 
 //collision check
 var _maxYspd = max(0,y_dist);
-var _objects_touching = ds_list_create(); 
+var _objects_touching = ds_list_create();
 var _objects_check_for = array_create(0);
 array_push(_objects_check_for, oMoveableWall, oWall);
 
@@ -172,26 +175,55 @@ for (var i = 0; i < _size; i++)
 	var _instance = _objects_touching[| i];
 	if _instance.object_index == oMoveableWall
 	{
-		canJump(true);
 		my_floor_plat = _instance;
+		break;
 	}
-	else
+	
+	else if _instance.object_index == oWall
 	{
-		canJump(false);
 		my_floor_plat = _instance;
 	}
 	
 	
+	//else if my_floor_plat != noone
+	//{
+	//	//canJump(my_floor_plat.object_index == oMoveableWall)
+	//	//show_debug_message("testing");
+	//}
 }
-ds_list_destroy(_objects_touching);
 
-jumpButtonCheck();
+//reset my_floor_plat
+if instance_exists(my_floor_plat) && !place_meeting(x, y + y_speed_cap, my_floor_plat)
+{
+	my_floor_plat = noone;
+}
+
+if instance_exists(my_floor_plat)
+{
+	var pixel_check = .5; //may want to change this value based on res
+	//make sure the player isn't stopping too far
+	
+	//move below
+	while !(place_meeting(x, y + pixel_check, my_floor_plat))
+	{
+		y += pixel_check;
+	}
+	
+	//move above
+	while place_meeting(x, y, my_floor_plat)
+	{
+		y -= pixel_check;
+	}
+	
+	y = floor(y); //to avoid being too far from obj or clipping inside it
+	y_dist = 0;	
+}
+
+ds_list_destroy(_objects_touching);
+//jumpButtonCheck();
 wallScoot();
 
-
 y += y_dist;
-
-
 
 
 

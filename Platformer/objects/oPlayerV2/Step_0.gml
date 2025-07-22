@@ -167,7 +167,7 @@ var _objects_touching = ds_list_create();
 var _objects_check_for = array_create(0);
 array_push(_objects_check_for, oMoveableWall, oWall);
 
-var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _objects_touching, false);
+var _size = instance_place_list(x, y + 1 + max(0,y_dist) + y_speed_cap, _objects_check_for, _objects_touching, false);
 
 for (var i = 0; i < _size; i++)
 {
@@ -176,6 +176,7 @@ for (var i = 0; i < _size; i++)
 	if _instance.object_index == oMoveableWall
 	{
 		my_floor_plat = _instance;
+		my_floor_plat.startTracking(id);
 		break;
 	}
 	
@@ -193,8 +194,9 @@ for (var i = 0; i < _size; i++)
 }
 
 //reset my_floor_plat
-if instance_exists(my_floor_plat) && !place_meeting(x, y + y_speed_cap, my_floor_plat)
+if instance_exists(my_floor_plat) && !place_meeting(x, y + 1 + max(0,y_dist) + y_speed_cap, oMoveableWall)
 {
+	my_floor_plat.startTracking(noone);
 	my_floor_plat = noone;
 }
 

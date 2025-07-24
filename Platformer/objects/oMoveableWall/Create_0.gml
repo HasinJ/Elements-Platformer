@@ -18,7 +18,7 @@ up_key_pressed = 0;
 
 
 //jump stuff
-grav = .5;
+grav = .275;
 y_speed_cap = 8;
 jump_speed = -7.15;
 jump_buffer_time = 0;

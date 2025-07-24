@@ -194,9 +194,9 @@ for (var i = 0; i < _size; i++)
 }
 
 //reset my_floor_plat
-if instance_exists(my_floor_plat) && !place_meeting(x, y + 1 + max(0,y_dist) + y_speed_cap, oMoveableWall)
+if instance_exists(my_floor_plat) && (_size == 0)
 {
-	my_floor_plat.startTracking(noone);
+	if my_floor_plat.object_index == oMoveableWall {my_floor_plat.startTracking(noone);}
 	my_floor_plat = noone;
 }
 

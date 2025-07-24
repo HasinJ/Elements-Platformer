@@ -200,7 +200,7 @@ up_key_pressed = keyboard_check_pressed(vk_up);
 var _maxYspd = max(0,y_dist);
 var _objects_touching = ds_list_create(); 
 var _objects_check_for = array_create(0);
-array_push(_objects_check_for, oPlayerV2);
+array_push(_objects_check_for, oPlayerV2, oWall);
 
 var _size = instance_place_list(x, y - 1 - max(0,y_dist), _objects_check_for, _objects_touching, false);
 
@@ -216,9 +216,15 @@ for (var i = 0; i < _size; i++)
 		//instance_destroy();
 		////show_debug_message("try deleting");
 	}
-	else
+	else if _instance.object_index == oWall
 	{
+		print("deleting");
 		_player = noone;
+		y = ystart;
+		y_dist = 0;
+		jump_count = 0;
+		break;
+		
 	}
 }
 

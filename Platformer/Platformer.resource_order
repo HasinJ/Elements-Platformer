@@ -17,7 +17,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"Note1","order":15,"path":"notes/Note1/Note1.yy",},
-    {"name":"Note2","order":17,"path":"notes/Note2/Note2.yy",},
     {"name":"oCamera","order":8,"path":"objects/oCamera/oCamera.yy",},
     {"name":"oCursor","order":1,"path":"objects/oCursor/oCursor.yy",},
     {"name":"oFireBall","order":6,"path":"objects/oFireBall/oFireBall.yy",},

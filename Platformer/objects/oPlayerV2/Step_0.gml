@@ -96,8 +96,53 @@ right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
 up_key_pressed = keyboard_check_pressed(vk_up);
 
-//-1 for left, 0 for nothing, 1 for right
-move_dir = right_key - left_key;
+
+applyGravity();
+
+//collision check
+var _maxYspd = max(0,y_dist);
+var _objects_touching = ds_list_create();
+var _objects_check_for = array_create(0);
+array_push(_objects_check_for, oMoveableWall, oWall);
+
+var _size = instance_place_list(x, y + 1 + max(0,y_dist) + y_speed_cap, _objects_check_for, _objects_touching, false);
+
+for (var i = 0; i < _size; i++)
+{
+	//instance is of type 'ref'
+	var _instance = _objects_touching[| i];
+	if _instance.object_index == oMoveableWall
+	{
+		my_floor_plat = _instance;
+		my_floor_plat.startTracking(id);
+		break;
+	}
+	
+	else if _instance.object_index == oWall
+	{
+		my_floor_plat = _instance;
+	}
+	
+	
+	//else if my_floor_plat != noone
+	//{
+	//	//canJump(my_floor_plat.object_index == oMoveableWall)
+	//	//show_debug_message("testing");
+	//}
+}
+
+
+
+if instance_exists(my_floor_plat) && my_floor_plat.object_index == oMoveableWall && (my_floor_plat.jump_count < 2)
+{
+	move_dir = 0;
+}
+
+else
+{
+	//-1 for left, 0 for nothing, 1 for right
+	move_dir = right_key - left_key;
+}
 
 if (-1 <= move_dir <= 1)
 {
@@ -159,46 +204,6 @@ if (-1 <= move_dir <= 1)
 	x += x_dist;
 }
 
-applyGravity();
-
-//collision check
-var _maxYspd = max(0,y_dist);
-var _objects_touching = ds_list_create();
-var _objects_check_for = array_create(0);
-array_push(_objects_check_for, oMoveableWall, oWall);
-
-var _size = instance_place_list(x, y + 1 + max(0,y_dist) + y_speed_cap, _objects_check_for, _objects_touching, false);
-
-for (var i = 0; i < _size; i++)
-{
-	//instance is of type 'ref'
-	var _instance = _objects_touching[| i];
-	if _instance.object_index == oMoveableWall
-	{
-		my_floor_plat = _instance;
-		my_floor_plat.startTracking(id);
-		break;
-	}
-	
-	else if _instance.object_index == oWall
-	{
-		my_floor_plat = _instance;
-	}
-	
-	
-	//else if my_floor_plat != noone
-	//{
-	//	//canJump(my_floor_plat.object_index == oMoveableWall)
-	//	//show_debug_message("testing");
-	//}
-}
-
-//reset my_floor_plat
-if instance_exists(my_floor_plat) && (_size == 0)
-{
-	if my_floor_plat.object_index == oMoveableWall {my_floor_plat.startTracking(noone);}
-	my_floor_plat = noone;
-}
 
 if instance_exists(my_floor_plat)
 {

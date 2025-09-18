@@ -153,11 +153,13 @@ function jumpButtonCheck()
 	{
 		jump_buffer_time = buffer_time;
 	}
+	
 	if jump_buffer_time > 0
 	{
 		jump_buffer = true;
 		jump_buffer_time--;
 	}
+	
 	else
 	{
 		jump_buffer = false;
@@ -168,78 +170,102 @@ function jumpButtonCheck()
 	{
 		if jump_count == 0
 		{
-			//print("jumping")
+			y_dist = jump_speed;
 			jump_buffer = false;
 			jump_buffer_time = 0;
-			y_dist = jump_speed;
 			jump_count++;
-			show_debug_message("jumping");
 		}
+		
 		else if jump_count == 1
 		{
-			//print("jumping")
+			y_dist=grav*2;
 			jump_buffer = false;
 			jump_buffer_time = 0;
-			y_dist = jump_speed;
 			jump_count++;
-			show_debug_message("jumping");
+			show_debug_message("oMoveableWall - jumping 2");
 		}
 	}
-	
 }
 
 
+function checkCollisionBelowDelete()
+{
+	if place_meeting(x, y+y_dist, oWall)
+	{
+		//scoot first
+		var pixel_check = .5; //may want to change this value based on res
+	
+		//move below while platform is moving below
+		while !place_meeting(x, y + pixel_check, oWall)
+		{
+			y += pixel_check;
+			
+		}
+		y_dist = 0;
+		
+		//then delete
+		y = ystart;
+		x = xstart;
+		jump_count = 0;
+	}
+}
+
+function checkCollisionBelow()
+{
+	//if place_meeting(x, y + 4, [oWall])
+	//{
+	//	print(y_dist);
+	//	print("deleting");
+	//	//startTracking(noone);
+	//	y = ystart;
+	//	y_dist = 0;
+	//	jump_count = 0;
+	//}
+	
+	//temporary till i can figure out how to reset
+	if place_meeting(x, y+1, oWall)
+	{
+		var pixel_check = .5; //may want to change this value based on res
+	
+		//move below while platform is moving below
+		while !place_meeting(x, y + pixel_check, oWall)
+		{
+			y += pixel_check;
+			
+		}
+		y_dist = 0;
+	}
+}
+
+function checkCollisionAbove()
+{
+	if place_meeting(x,y-1,[oPlayerV2])
+	{
+		jumpButtonCheck();
+	} 
+}
 //if _player!=noone
 //{
 	//trackPlayer(_player);
 //}
 
 up_key_pressed = keyboard_check_pressed(vk_up);
+y_dist += grav;
 
-//collision check
-var _maxYspd = max(0,y_dist);
-var _objects_touching = ds_list_create(); 
-var _objects_check_for = array_create(0);
-array_push(_objects_check_for, oPlayerV2, oWall);
 
-var _size = instance_place_list(x, y - 1 - max(0,y_dist), _objects_check_for, _objects_touching, false);
 
-for (var i = 0; i < _size; i++)
+
+if jump_count > 1
 {
-	//instance is of type 'ref'
-	var _instance = _objects_touching[| i];
-	if _instance.object_index==oPlayerV2 
-	{
-		_player = _instance;
-		//ds_list_destroy(_objects_touching);
-		//_player.stopFollowingMe();
-		//instance_destroy();
-		////show_debug_message("try deleting");
-	}
-	else if _instance.object_index == oWall
-	{
-		print("deleting");
-		_player = noone;
-		y = ystart;
-		y_dist = 0;
-		jump_count = 0;
-		break;
-		
-	}
+	 //only check for collision below after gaining momentum
+	 //can't be certain that it is a player that will be moving propelling the object downward
+	 //to trigger reset
+	 checkCollisionBelowDelete();
 }
 
-ds_list_destroy(_objects_touching);
-
-
-
-if instance_exists(_player)
+if jump_count == 0
 {
-	jumpButtonCheck();
-}
-
-if jump_count > 0
-{
-	y_dist += grav;
+	checkCollisionBelow();
 }
 
 //cap jump height //i dont think this works
@@ -247,6 +273,9 @@ if (y_dist > y_speed_cap)
 {
 	y_dist = y_speed_cap;
 }
+
+//collision above for platform jumping
+checkCollisionAbove();
 
 //print(y_dist);
 

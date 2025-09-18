@@ -17,6 +17,11 @@ function applyGravity()
 	y_dist += grav;
 }
 
+function wallScoot()
+{
+	//checks the place you're jumping towards
+
+}
 
 function jumpButtonCheck()
 {
@@ -49,16 +54,23 @@ function jumpButtonCheck()
 	
 	if(jump_buffer && jump_count < jump_max) 
 	{
-		print("oPlayer V2 - jumping")
-		my_floor_plat = noone;
-		jump_buffer = false;
-		jump_buffer_time = 0;
-		y_dist = jump_speed*2;
-		jump_count++;
-		return true;
+		if jump_count == 1
+		{
+			//print("jumping")
+			jump_buffer = false;
+			jump_buffer_time = 0;
+			y_dist = jump_speed;
+			jump_count++;
+			show_debug_message("jumping");
+			bringPlatform();
+		}
+		else if jump_count == 2
+		{
+			
+		}
+		
 	}
 	
-
 }
 
 
@@ -69,9 +81,53 @@ right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
 up_key_pressed = keyboard_check_pressed(vk_up);
 
-//-1 for left, 0 for nothing, 1 for right
-move_dir = right_key - left_key;
 
+applyGravity();
+
+//collision check
+var _maxYspd = max(0,y_dist);
+var _objects_touching = ds_list_create();
+var _objects_check_for = array_create(0);
+array_push(_objects_check_for, oMoveableWall, oWall);
+
+var _size = instance_place_list(x, y + 1 + max(0,y_dist) + y_speed_cap, _objects_check_for, _objects_touching, false);
+
+for (var i = 0; i < _size; i++)
+{
+	//instance is of type 'ref'
+	var _instance = _objects_touching[| i];
+	if _instance.object_index == oMoveableWall
+	{
+		my_floor_plat = _instance;
+		my_floor_plat.startTracking(id);
+		break;
+	}
+	
+	else if _instance.object_index == oWall
+	{
+		my_floor_plat = _instance;
+	}
+	
+	
+	//else if my_floor_plat != noone
+	//{
+	//	//canJump(my_floor_plat.object_index == oMoveableWall)
+	//	//show_debug_message("testing");
+	//}
+}
+
+
+
+if instance_exists(my_floor_plat) && my_floor_plat.object_index == oMoveableWall && (my_floor_plat.jump_count < 2)
+{
+	move_dir = 0;
+}
+
+else
+{
+	//-1 for left, 0 for nothing, 1 for right
+	move_dir = right_key - left_key;
+}
 
 if (-1 <= move_dir <= 1)
 {
@@ -133,10 +189,12 @@ if (-1 <= move_dir <= 1)
 	x += x_dist;
 }
 
-
+<<<<<<< Updated upstream
+=======
 applyGravity();
 
 //collision check
+var _maxYspd = max(0,y_dist);
 var _objects_touching = ds_list_create();
 var _objects_check_for = array_create(0);
 array_push(_objects_check_for, oMoveableWall, oWall);
@@ -147,15 +205,14 @@ for (var i = 0; i < _size; i++)
 {
 	//instance is of type 'ref'
 	var _instance = _objects_touching[| i];
-	
-	canJump(false);
 	if _instance.object_index == oMoveableWall
 	{
 		my_floor_plat = _instance;
-		canJump(true);
+		my_floor_plat.startTracking(id);
+		break;
 	}
 	
-    else if _instance.object_index == oWall
+	else if _instance.object_index == oWall
 	{
 		my_floor_plat = _instance;
 	}
@@ -168,18 +225,7 @@ for (var i = 0; i < _size; i++)
 	//}
 }
 
-if _size == 0
-{
-	my_floor_plat = noone;
-}
-
-
-var jumping = false;
-
-if instance_exists(my_floor_plat) && my_floor_plat.object_index==oMoveableWall && my_floor_plat.jump_count > 1
-{
-	jumping = jumpButtonCheck();	
-}
+>>>>>>> Stashed changes
 
 if instance_exists(my_floor_plat)
 {
@@ -199,7 +245,6 @@ if instance_exists(my_floor_plat)
 	
 	y = floor(y); //to avoid being too far from obj or clipping inside it
 	y_dist = 0;	
-	
 }
 else
 {
@@ -208,6 +253,7 @@ else
 
 ds_list_destroy(_objects_touching);
 //jumpButtonCheck();
+wallScoot();
 
 y += y_dist;
 

@@ -31,34 +31,33 @@ function jumpButtonCheck()
 	}
 	
 	
-	//jump buffer
-	if up_key_pressed
-	{
-		jump_buffer_time = buffer_time;
-	}
-	if jump_buffer_time > 0
-	{
-		jump_buffer = true;
-		jump_buffer_time--;
-	}
-	else
-	{
-		jump_buffer = false;
-		jump_buffer_time = 0;
-	}
+	////jump buffer
+	//if up_key_pressed
+	//{
+	//	jump_buffer_time = buffer_time;
+	//}
+	//if jump_buffer_time > 0
+	//{
+	//	jump_buffer = true;
+	//	jump_buffer_time--;
+	//}
+	//else
+	//{
+	//	jump_buffer = false;
+	//	jump_buffer_time = 0;
+	//}
 	
-	if(jump_buffer && jump_count < jump_max) 
+	
+	if(up_key_pressed && jump_count < jump_max) //add jump_buffer to this, if tracking jump buffering
 	{
-		print("oPlayer V2 - jumping")
 		my_floor_plat = noone;
 		jump_buffer = false;
 		jump_buffer_time = 0;
-		y_dist = jump_speed*2;
+		y_dist = jump_speed;
+		print("oPlayer V2 - jumping")
+		print(string(y_dist));
 		jump_count++;
-		return true;
 	}
-	
-
 }
 
 
@@ -174,11 +173,9 @@ if _size == 0
 }
 
 
-var jumping = false;
-
 if instance_exists(my_floor_plat) && my_floor_plat.object_index==oMoveableWall && my_floor_plat.jump_count > 1
 {
-	jumping = jumpButtonCheck();	
+	jumpButtonCheck();	
 }
 
 if instance_exists(my_floor_plat)

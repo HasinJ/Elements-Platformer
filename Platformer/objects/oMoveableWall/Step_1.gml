@@ -148,29 +148,29 @@ function startTracking(player)
 function jumpButtonCheck()
 {
 	
-	//jump buffer
-	if up_key_pressed
-	{
-		jump_buffer_time = buffer_time;
-	}
+	////jump buffer
+	//if up_key_pressed
+	//{
+	//	jump_buffer_time = buffer_time;
+	//}
 	
-	if jump_buffer_time > 0
-	{
-		jump_buffer = true;
-		jump_buffer_time--;
-	}
+	//if jump_buffer_time > 0
+	//{
+	//	jump_buffer = true;
+	//	jump_buffer_time--;
+	//}
 	
-	else
-	{
-		jump_buffer = false;
-		jump_buffer_time = 0;
-	}
+	//else
+	//{
+	//	jump_buffer = false;
+	//	jump_buffer_time = 0;
+	//}
 	
-	if(jump_buffer && jump_count < jump_max) 
+	if(up_key_pressed && jump_count < jump_max) //add jump_buffer to this, if tracking jump buffering
 	{
 		if jump_count == 0
 		{
-			y_dist = jump_speed;
+			y_dist = jump_speed-2;
 			jump_buffer = false;
 			jump_buffer_time = 0;
 			jump_count++;
@@ -178,7 +178,10 @@ function jumpButtonCheck()
 		
 		else if jump_count == 1
 		{
-			y_dist=grav*2;
+			var second_jump_y_dist = 7.15 //jump_speed but opposite direction (for now)
+			
+			if !sign(y_dist) {y_dist = 0;}
+			y_dist += second_jump_y_dist;
 			jump_buffer = false;
 			jump_buffer_time = 0;
 			jump_count++;
@@ -250,9 +253,7 @@ function checkCollisionAbove()
 //}
 
 up_key_pressed = keyboard_check_pressed(vk_up);
-y_dist += grav;
-
-
+y_dist += grav; //applying gravity
 
 
 if jump_count > 1
@@ -268,15 +269,12 @@ if jump_count == 0
 	checkCollisionBelow();
 }
 
-//cap jump height //i dont think this works
+//collision above for platform jumping
+checkCollisionAbove();
+
+//cap fall speed //i dont think this works
 if (y_dist > y_speed_cap)
 {
 	y_dist = y_speed_cap;
 }
-
-//collision above for platform jumping
-checkCollisionAbove();
-
-//print(y_dist);
-
 y+=y_dist;

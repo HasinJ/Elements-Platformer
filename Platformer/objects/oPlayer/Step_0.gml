@@ -171,8 +171,9 @@ array_push(_objects_check_for, oMoveableWall);
 // Check and add objects to list
   // x - current x degree, left + right doesn't really matter here
   // y
-	// + 1               - in the case y is 0
-	// + _maxYspd        - in the case that the player is moving, it only tracks downwards, this would allow the player to travel through the platform if I wanted it
+	// + 1                     - in the case y is 0
+	// + _maxYspd              - in the case that the player is moving, it only tracks downwards, this would allow the player to travel through the platform if I wanted it
+	// + move_wall_max_y_spd   - in the case that the object has already moved, this value helps know it's max possible movement
 var _size = instance_place_list(x, y+1 + _maxYspd + move_wall_max_y_spd, _objects_check_for, _objects_touching, false);
 
 

@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0" version="27.1.6" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0" version="28.2.5" pages="2">
   <diagram name="Page-1" id="BnbvyaOT_vO8Rth5V9e3">
-    <mxGraphModel dx="1892" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1522" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -18,9 +18,9 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-31" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-28" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="640" width="290" height="270" as="geometry">
-            <mxRectangle x="-825" y="640" width="120" height="30" as="alternateBounds" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1" collapsed="1">
+          <mxGeometry x="-825" y="640" width="120" height="30" as="geometry">
+            <mxRectangle x="-825" y="640" width="290" height="460" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-33" value="Emotion bar - affects gameplay attributes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
@@ -29,8 +29,8 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-34" value="Objective constantly changes&lt;br&gt;&lt;div&gt;- Carry obj&lt;/div&gt;&lt;div&gt;- Kill obj&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
           <mxGeometry y="60" width="290" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Slow motion timer when controlling objects&lt;/div&gt;&lt;div&gt;&amp;nbsp;- Using one stick for character and another stick for moving elements&lt;/div&gt;&lt;div&gt;- instead of having another input, when the character goes near the eleement, that element&#39;s attribute affects the character&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
-          <mxGeometry y="120" width="290" height="150" as="geometry" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Slow motion timer when controlling objects&lt;/li&gt;&lt;li&gt;&amp;nbsp;Using one stick for character and another stick for moving elements&lt;/li&gt;&lt;li&gt;instead of having another input, when the character goes near the element, that element&#39;s attribute affects the character&lt;/li&gt;&lt;li&gt;add jump&lt;/li&gt;&lt;ul&gt;&lt;li&gt;earth is grabbable&lt;/li&gt;&lt;li&gt;earth lets you lift with it, and then actually jump off, simulating double jump&lt;/li&gt;&lt;li&gt;water is grabbable&lt;/li&gt;&lt;li&gt;spits from mouth forward&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;attack mode&lt;/li&gt;&lt;ul&gt;&lt;li&gt;water slices, like a sword&lt;/li&gt;&lt;li&gt;earth moves things around&lt;/li&gt;&lt;li&gt;air pushes back&lt;/li&gt;&lt;li&gt;fire shoots and burns&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
+          <mxGeometry y="120" width="290" height="340" as="geometry" />
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-39" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
           <mxGeometry x="-825" y="210" width="800" height="390" as="geometry" />
@@ -105,10 +105,10 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-47" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#000000;" parent="A49KD2nKRxiiyZH7kdmM-54" vertex="1">
           <mxGeometry x="260" width="70" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="gzNmikJlvF1EsS_GcAot-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-54">
+        <mxCell id="gzNmikJlvF1EsS_GcAot-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="A49KD2nKRxiiyZH7kdmM-54" vertex="1">
           <mxGeometry x="370" y="10" width="70" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="gzNmikJlvF1EsS_GcAot-3" value="Extend/Jump" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="A49KD2nKRxiiyZH7kdmM-54">
+        <mxCell id="gzNmikJlvF1EsS_GcAot-3" value="Extend/Jump" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="A49KD2nKRxiiyZH7kdmM-54" vertex="1">
           <mxGeometry x="360" y="60" width="90" height="30" as="geometry" />
         </mxCell>
       </root>

@@ -18,19 +18,19 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-31" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-28" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1" collapsed="1">
-          <mxGeometry x="-825" y="640" width="120" height="30" as="geometry">
-            <mxRectangle x="-825" y="640" width="290" height="460" as="alternateBounds" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-32" value="Gameplay ideas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-825" y="640" width="350" height="560" as="geometry">
+            <mxRectangle x="-825" y="640" width="120" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-33" value="Emotion bar - affects gameplay attributes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
-          <mxGeometry y="30" width="290" height="30" as="geometry" />
+          <mxGeometry y="30" width="350" height="30" as="geometry" />
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-34" value="Objective constantly changes&lt;br&gt;&lt;div&gt;- Carry obj&lt;/div&gt;&lt;div&gt;- Kill obj&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
-          <mxGeometry y="60" width="290" height="60" as="geometry" />
+          <mxGeometry y="60" width="350" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Slow motion timer when controlling objects&lt;/li&gt;&lt;li&gt;&amp;nbsp;Using one stick for character and another stick for moving elements&lt;/li&gt;&lt;li&gt;instead of having another input, when the character goes near the element, that element&#39;s attribute affects the character&lt;/li&gt;&lt;li&gt;add jump&lt;/li&gt;&lt;ul&gt;&lt;li&gt;earth is grabbable&lt;/li&gt;&lt;li&gt;earth lets you lift with it, and then actually jump off, simulating double jump&lt;/li&gt;&lt;li&gt;water is grabbable&lt;/li&gt;&lt;li&gt;spits from mouth forward&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;attack mode&lt;/li&gt;&lt;ul&gt;&lt;li&gt;water slices, like a sword&lt;/li&gt;&lt;li&gt;earth moves things around&lt;/li&gt;&lt;li&gt;air pushes back&lt;/li&gt;&lt;li&gt;fire shoots and burns&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
-          <mxGeometry y="120" width="290" height="340" as="geometry" />
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Slow motion timer when controlling objects&lt;/li&gt;&lt;li&gt;&amp;nbsp;Using one stick for character and another stick for moving elements&lt;/li&gt;&lt;li&gt;instead of having another input, when the character goes near the element, that element&#39;s attribute affects the character&lt;/li&gt;&lt;li&gt;earth is grabbable&lt;/li&gt;&lt;ul&gt;&lt;li&gt;earth lets you lift with it, and then actually jump off, simulating double jump,&amp;nbsp;&lt;/li&gt;&lt;li&gt;jump is active by default&lt;/li&gt;&lt;li&gt;pressing down pushed earth down&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;water is grabbable&lt;/li&gt;&lt;ul&gt;&lt;li&gt;spits from legs/mouth forward&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;attack mode&lt;/li&gt;&lt;ul&gt;&lt;li&gt;water slices, like a sword&lt;/li&gt;&lt;li&gt;earth moves things around&lt;/li&gt;&lt;li&gt;air pushes back&lt;/li&gt;&lt;li&gt;fire shoots and burns&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="A49KD2nKRxiiyZH7kdmM-32" vertex="1">
+          <mxGeometry y="120" width="350" height="440" as="geometry" />
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-39" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
           <mxGeometry x="-825" y="210" width="800" height="390" as="geometry" />

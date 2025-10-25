@@ -129,8 +129,6 @@ function spin()
 
 }
 
-//spin();
-
 function print(msg)
 {
 	show_debug_message(msg);
@@ -190,9 +188,9 @@ function jumpButtonCheck()
 	}
 }
 
-
 function checkCollisionBelowDelete()
 {
+	//placeholder until i figure out how to delete/respawn stuff
 	if place_meeting(x, y+y_dist, oWall)
 	{
 		//scoot first
@@ -247,34 +245,38 @@ function checkCollisionAbove()
 		jumpButtonCheck();
 	} 
 }
-//if _player!=noone
-//{
-	//trackPlayer(_player);
-//}
-
-up_key_pressed = keyboard_check_pressed(vk_up);
-y_dist += grav; //applying gravity
 
 
-if jump_count > 1
+function main()
 {
-	 //only check for collision below after gaining momentum
-	 //can't be certain that it is a player that will be moving propelling the object downward
-	 //to trigger reset
-	 checkCollisionBelowDelete();
+	
+	up_key_pressed = keyboard_check_pressed(vk_up);
+	y_dist += grav; //applying gravity
+
+
+	if jump_count > 1
+	{
+		 //only check for collision below after gaining momentum
+		 //can't be certain that it is a player that will be moving propelling the object downward
+		 //to trigger reset
+		 checkCollisionBelowDelete();
+	}
+
+	if jump_count == 0
+	{
+		checkCollisionBelow();
+	}
+
+	//collision above for platform jumping
+	checkCollisionAbove();
+
+	//cap fall speed //i dont think this works
+	if (y_dist > y_speed_cap)
+	{
+		y_dist = y_speed_cap;
+	}
+	y+=y_dist;	
 }
 
-if jump_count == 0
-{
-	checkCollisionBelow();
-}
+main();
 
-//collision above for platform jumping
-checkCollisionAbove();
-
-//cap fall speed //i dont think this works
-if (y_dist > y_speed_cap)
-{
-	y_dist = y_speed_cap;
-}
-y+=y_dist;

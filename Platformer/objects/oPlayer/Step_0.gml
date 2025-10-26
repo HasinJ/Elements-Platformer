@@ -185,7 +185,7 @@ for (var i = 0; i < _size; i++)
 	
 	////return any kind of walls that are below the player
 	if (_inst.y_dist <= y_dist || instance_exists(my_floor_plat))
-	&& (_inst.y_dist > 0 || place_meeting(x, y+1 + _maxYspd, _inst))
+	&& (_inst.y_dist > 0 || place_meeting(x, y+1 + _maxYspd, _inst)) //for walls already in motion
 	{
 		if _inst.object_index == oWall 
 		|| object_is_ancestor(_inst.object_index, oWall)

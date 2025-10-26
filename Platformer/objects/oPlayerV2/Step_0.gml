@@ -17,20 +17,8 @@ function applyGravity()
 	y_dist += grav;
 }
 
-
-function jumpButtonCheck()
+function jump()
 {
-	
-	if (on_earth)
-	{
-		jump_count = 0;
-	}
-	else
-	{
-		jump_count = jump_max;
-	}
-	
-	
 	////jump buffer
 	//if up_key_pressed
 	//{
@@ -48,9 +36,9 @@ function jumpButtonCheck()
 	//}
 	
 	
-	if(up_key_pressed && jump_count < jump_max) //add jump_buffer to this, if tracking jump buffering
+	if(jump_count < jump_max) //add jump_buffer to this, if tracking jump buffering
 	{
-		my_floor_plat = noone;
+		my_floor_plat = noone; //this is to indicate we're not going to be touching the original platform anymore
 		jump_buffer = false;
 		jump_buffer_time = 0;
 		y_dist = jump_speed;
@@ -144,20 +132,22 @@ function main()
 	  // y
 		// + 1                     - in the case y is 0
 		// + _maxYspd              - in the case that the player is moving, it only tracks downwards, this would allow the player to travel through the platform if I wanted it
-		// + move_wall_max_y_spd   - in the case that the object has already moved, this value helps know it's max possible movement
-	var _size = instance_place_list(x, y + 1 + max(0,y_dist) + y_speed_cap, _objects_check_for, _objects_touching, false);
+		// + move_wall_max_y_spd   - in the case that the object has already moved, this value helps know it's max possible movement, shouldnt it already know this? Like my_floor_plat should be figured by then
+	var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _objects_touching, false);
 
+	
+	
 	for (var i = 0; i < _size; i++)
 	{
 		//instance is of type 'ref'
 		var _instance = _objects_touching[| i];
 	
-		if _instance.object_index == oMoveableWall
+		if _instance.object_index == oMoveableWall && floor(bbox_bottom) <= ceil(_instance.bbox_top - _instance.y_dist)
 		{
 			my_floor_plat = _instance;
 		}
 	
-	    else if _instance.object_index == oWall
+	    else if _instance.object_index == oWall && floor(bbox_bottom) <= ceil(_instance.bbox_top - _instance.y_dist)
 		{
 			my_floor_plat = _instance;
 		}
@@ -175,10 +165,10 @@ function main()
 	}
 
 
-	if instance_exists(my_floor_plat)
+	if up_key_pressed && instance_exists(my_floor_plat)
 	{
 		jump_count=0;
-		jumpButtonCheck();	
+		jump();	
 	}
 	else
 	{

@@ -1,29 +1,13 @@
 
-	
-////Moving platform
-//my_floor_plat = noone;
-//move_wall_x_spd = 0;
-//move_wall_max_y_spd = 8;
-//name = "moveable wall"
-	
-event_inherited();
-dir = 0;
-rotSpd = 360 / 45;
-radius = 32;
-y_dist = 0;
-_player = noone;
-grav = .275;
-my_floor_plat = noone;
-up_key_pressed = 0;
-
-
-//jump stuff
-grav = .275;
-y_speed_cap = 8;
-jump_speed = -7.15;
-jump_buffer_time = 0;
-jump_buffer = false;
-buffer_time = 3;
+follow_target = noone;
+follow_offset = 0;
 jump_count = 0;
-jump_max = 2;
-on_earth = false;
+is_following = false;
+is_falling = false;
+
+on_ground = false;
+walk_speed = 4;
+platform = noone;
+
+vertical_speed = 0;
+grav = 0.6;

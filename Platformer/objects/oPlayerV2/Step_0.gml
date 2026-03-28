@@ -133,10 +133,8 @@ function main()
 		// + 1                     - in the case y is 0
 		// + _maxYspd              - in the case that the player is moving, it only tracks downwards, this would allow the player to travel through the platform if I wanted it
 		// + move_wall_max_y_spd   - in the case that the object has already moved, this value helps know it's max possible movement, shouldnt it already know this? Like my_floor_plat should be figured by then
-	var _size = instance_place_list(x, y + 1 + max(0,y_dist), _objects_check_for, _objects_touching, false);
+	var _size = instance_place_list(x, y + 1 + max(0,y_dist) + move_wall_max_y_spd, _objects_check_for, _objects_touching, false);
 
-	
-	
 	for (var i = 0; i < _size; i++)
 	{
 		//instance is of type 'ref'
@@ -147,16 +145,10 @@ function main()
 			my_floor_plat = _instance;
 		}
 	
-	    else if _instance.object_index == oWall && floor(bbox_bottom) <= ceil(_instance.bbox_top - _instance.y_dist)
+	    else if _instance.object_index == oWall && floor(bbox_bottom) <= ceil(_instance.bbox_top - _instance.y_dist) && place_meeting(x, y+1, oWall)
 		{
 			my_floor_plat = _instance;
 		}
-	
-		//else if my_floor_plat != noone
-		//{
-		//	//canJump(my_floor_plat.object_index == oMoveableWall)
-		//	//show_debug_message("testing");
-		//}
 	}
 
 	if _size == 0
@@ -172,6 +164,7 @@ function main()
 	}
 	else
 	{
+		//not being able to jump
 		jump_count = jump_max;
 	}
 
@@ -192,8 +185,7 @@ function main()
 		}
 	
 		y = floor(y); //to avoid being too far from obj or clipping inside it
-		y_dist = 0;	
-	
+		y_dist = 0;
 	}
 	else
 	{

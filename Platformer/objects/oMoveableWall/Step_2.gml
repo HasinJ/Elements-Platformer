@@ -26,6 +26,25 @@ function checkYcollision()
     }
 }
 
+function checkOnGround()
+{
+	on_ground = false;
+    platform = noone;
+
+    var inst = instance_place(x, y + 1, obj_platform);
+	
+    if (inst!=noone && inst.object_index == oMoveableWall.object_index && !inst.is_following)
+    {
+        on_ground = true;
+        platform = inst;
+    }
+	else if (inst != noone)
+	{
+        on_ground = true;
+        platform = inst;
+	}
+}
+
 function main()
 {
 	vertical_speed += grav;
@@ -49,9 +68,11 @@ function main()
 	if (is_falling)
 	{
 		y += vertical_speed;
-		//checkYcollision();
 		y = round(y)
     }
+	
+	
+	checkOnGround()
 	
 	//obj_platform = oWall
 	//checkYcollision();

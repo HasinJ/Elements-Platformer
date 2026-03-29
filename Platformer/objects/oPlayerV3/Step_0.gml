@@ -56,7 +56,7 @@ function checkYcollision()
 		if (vertical_speed > 0) // Falling
 		{
 			// Snap to platform top
-			if (inst.object_index == oMoveableWall.object_index && inst.is_following == false) // ignores collision for instances that are following
+			if (inst.object_index==oWall.object_index || (inst.object_index == oMoveableWall.object_index && inst.is_following == false)) // ignores collision for instances that are following, but keeps track of oWalls
 			{
 				y = inst.bbox_top - (bbox_bottom - y);
 				vertical_speed = 0;
@@ -123,6 +123,9 @@ function main()
 	x += horizontal_speed;
 
 	// Y collision
+	// 1. Scoot to whatever is next to it
+	// 2. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
+	// 3. Can now jump after checking on ground and scooted
 	checkYcollision();
 	checkOnGround();
 	checkJumping();

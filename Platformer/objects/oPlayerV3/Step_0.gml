@@ -48,7 +48,6 @@ function checkYcollision()
 {
     // Check collision before reaching target
 	// TODO:
-	// - On_ground might need to be redefined - it's what allows for double jumping, on_ground and actually being on a special platform should be 2 different things
 	// - Have object recognition be one thing, and actual application of object be another
 	var inst = instance_place(x, y + vertical_speed, obj_platform);
     if (inst != noone)
@@ -91,7 +90,7 @@ function checkJumping()
 			{
 				 platform.follow_target = noone;
 				 platform.is_falling = true;
-				 vertical_speed = jump_speed - 0.5;
+				 vertical_speed = jump_speed - 0.5; //second jump is a little higher
 			} 
 	    }
 	    else if (platform != noone) //normal jump
@@ -115,17 +114,20 @@ function main()
 	var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 	horizontal_speed = move_dir * walk_speed
 	
-	// Apply gravity
-	vertical_speed += grv;
+	if (vertical_speed < 0) // upwards motion (lower # means = more float)
+	    vertical_speed += grv * 0.7;
+	else					// downwards motion
+	    vertical_speed += grv;
 	
 	// X collision
 	checkXcollision();
 	x += horizontal_speed;
 
 	// Y collision
-	// 1. Scoot to whatever is next to it
-	// 2. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
-	// 3. Can now jump after checking on ground and scooted
+	// 1. Vertical speed needs to be applied before collision actually happens, can't be too late colliding
+	// 2. Scoot to whatever is next to it
+	// 3. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
+	// 4. Can now jump after checking on ground and scooted
 	checkYcollision();
 	checkOnGround();
 	checkJumping();

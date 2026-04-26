@@ -6,6 +6,7 @@ follow_offset = 0;
 jump_count = 0;
 is_following = false;
 is_falling = false;
+can_reset = false;
 
 on_ground = false;
 walk_speed = 4;

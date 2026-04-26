@@ -46,6 +46,7 @@ function checkToFollow()
 	{
 	    if (instance_exists(follow_target))
 	    {
+			can_reset = false;
 			is_following = true;
 	        y = follow_target.bbox_bottom + follow_offset;
 			x = follow_target.x;
@@ -68,6 +69,7 @@ function checkFalling()
 	if (is_falling)
 	{
 		y += vertical_speed;
+		can_reset = true;
 		y = round(y)
     }
 }

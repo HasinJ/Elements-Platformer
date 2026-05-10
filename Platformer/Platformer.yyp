@@ -50,6 +50,7 @@
     {"id":{"name":"oWaterBall","path":"objects/oWaterBall/oWaterBall.yy",},},
     {"id":{"name":"Room_init","path":"rooms/Room_init/Room_init.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"move_plat_inits","path":"scripts/move_plat_inits/move_plat_inits.yy",},},
     {"id":{"name":"sCursor","path":"sprites/sCursor/sCursor.yy",},},
     {"id":{"name":"sFireBall","path":"sprites/sFireBall/sFireBall.yy",},},
     {"id":{"name":"sMoveableWall","path":"sprites/sMoveableWall/sMoveableWall.yy",},},

@@ -4,25 +4,34 @@ function print(msg)
 	show_debug_message(msg);
 }
 
-//function checkYcollision()
-//{
-//	if on_ground
-//	{
-//		jump_count=0;
-//	}
+function resetObject()
+{
+	y = ystart;
+	x = xstart;
+	setMovingPlatformVariables();
+}
+
+function yCollisionPlatform()
+{
+	if on_ground
+	{
+		jump_count=0;
+	}
 	
-//    // Check next frame (vertical speed) for an object
-//    if (place_meeting(x, y + vertical_speed, obj_platform)) 
-//    {
-//        var inst = instance_place(x, y + vertical_speed, obj_platform);
-//        if (vertical_speed > 0) // Falling
-//        {
-//            // Snap to platform top
-//            y = inst.bbox_top - (bbox_bottom - y);
-//        }
-//        vertical_speed = 0;
-//    }
-//}
+	if platform != noone
+	{
+	    var margin = 0.5;
+	    var ground_top = platform.bbox_top;
+	    var my_bottom = bbox_bottom;
+	    var horizontal_overlap = bbox_right > platform.bbox_left && bbox_left < platform.bbox_right;
+	    var touching_top = my_bottom >= ground_top - margin && my_bottom <= ground_top + margin;
+
+	    if (horizontal_overlap && touching_top)
+	    {
+	        resetObject();
+	    }
+	}
+}
 
 function checkOnGround()
 {
@@ -30,13 +39,43 @@ function checkOnGround()
     platform = noone;
 
     var inst = instance_place(x, y + 1, obj_platform);
-	
     if (inst!=noone)
     {
-        on_ground = true;
-        platform = inst;
-		
-    }
+		// to stop setting on_ground when my right is equal or greater than platform.left (and vice versa)
+		if (bbox_right > inst.bbox_left && bbox_left < inst.bbox_right)
+		{
+	        on_ground = true;
+	        platform = inst;
+			print("setting ground");
+		}
+		else
+		{
+			print("aint doing anything")
+		}
+	}
+}
+
+function followXAxis()
+{		
+	var player_left = follow_target.bbox_left;
+	var player_right = follow_target.bbox_right;
+	var margin = 0.5; //to offset and trigger action before collision gets tight
+	var left_edge = bbox_left + margin;
+	var right_edge = bbox_right - margin;
+			
+	// Player pushing right edge
+	if (player_right > right_edge)
+	{
+		return x + (player_right - right_edge);
+	}
+
+	// Player pushing left edge
+	else if (player_left < left_edge)
+	{
+		return x - (left_edge - player_left);
+	}
+	
+	return x;
 }
 
 function checkToFollow()
@@ -49,18 +88,14 @@ function checkToFollow()
 			can_reset = false;
 			is_following = true;
 	        y = follow_target.bbox_bottom + follow_offset;
-			x = follow_target.x;
+			//x = follow_target.x;
+			//x = followXAxis();
 	    }
 	    else
 	    {
 	        follow_target = noone;
 	    }
 	}
-}
-
-function checkReset()
-{
-		
 }
 
 function checkFalling()
@@ -77,13 +112,14 @@ function checkFalling()
 function main()
 {
 	vertical_speed += grav;
-	obj_platform = oWall
 	checkToFollow();
 	checkFalling();
 	checkOnGround()
-	checkReset();
 	//obj_platform = oWall
-	//checkYcollision();
+	if platform!=noone
+	{
+		yCollisionPlatform();
+	}
 }
 
 main();

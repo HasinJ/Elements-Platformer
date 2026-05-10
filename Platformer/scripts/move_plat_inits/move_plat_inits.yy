@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"move_plat_inits",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"move_plat_inits",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

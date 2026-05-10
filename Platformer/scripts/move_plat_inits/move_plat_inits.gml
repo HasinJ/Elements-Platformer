@@ -1,0 +1,20 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+/// @function setMovingPlatformVariables()
+/// @description Initializes variables for moving platform 
+function setMovingPlatformVariables(){
+	//reset variables
+	on_ground = false;
+	follow_target = noone;
+	follow_offset = 0;
+	jump_count = 0;
+	is_following = false;
+	is_falling = false;
+	platform = noone;
+	vertical_speed = 0;
+
+	walk_speed = 4;
+	obj_platform = oWall;
+	grav = 0.6;
+}

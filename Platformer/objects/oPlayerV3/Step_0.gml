@@ -70,6 +70,20 @@ function checkYcollision()
     }
 }
 
+function firstJump(plat_inst)
+{
+	// Tell platform to follow player
+	plat_inst.startFollowing(id, bbox_bottom);
+	vertical_speed = jump_speed;
+}
+
+function secondJump(plat_inst)
+{
+	plat_inst.startFalling();
+	vertical_speed = jump_speed - 0.5; //second jump is a little higher
+}
+
+
 function checkJumping()
 {
 	if (on_ground && keyboard_check_pressed(vk_up)) 
@@ -80,24 +94,19 @@ function checkJumping()
 			platform.jump_count += 1;
 			if platform.jump_count == 1 //first jump
 			{
-				 // Tell platform to follow player
-				platform.follow_target = id;
-				platform.follow_offset = platform.y - bbox_bottom //storing the original gap of the center of the platform relative to player
-			    vertical_speed = jump_speed;
+				firstJump(platform);
 			}
 
 			else if platform.jump_count >= 2
 			{
-				 platform.follow_target = noone;
-				 platform.is_falling = true;
-				 vertical_speed = jump_speed - 0.5; //second jump is a little higher
+				secondJump(platform);
 			} 
 	    }
 	    else if (platform != noone) //normal jump
 	    {
 	        // Normal jump from regular platform
-	        //vertical_speed = jump_speed;
-			platform.jump_count=0;
+	        vertical_speed = jump_speed;
+			//platform.jump_count=0; //shouldnt really need this
 	        platform = noone;
 	    }
 	}

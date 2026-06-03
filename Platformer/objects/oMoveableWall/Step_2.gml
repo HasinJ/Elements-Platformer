@@ -84,7 +84,7 @@ function checkToFollow()
 	// TODO: if statement to check if player is even above anymore
 	
 	// Follow player if attached and if it's still above
-	if (follow_target != noone && instance_exists(follow_target) && place_meeting(x, y - follow_target.vertical_speed, follow_target))
+	if (follow_target != noone && instance_exists(follow_target) )  // this is my attempt at making the platform drop after player leaves -> //&& place_meeting(x, y - follow_target.vertical_speed, follow_target
 	{
 		can_reset = false;
 		is_following = true;

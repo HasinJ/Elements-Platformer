@@ -80,11 +80,9 @@ function followXAxis()
 }
 
 function checkToFollow()
-{
-	// TODO: if statement to check if player is even above anymore
-	
+{	
 	// Follow player if attached and if it's still above
-	if (follow_target != noone && instance_exists(follow_target) )  // this is my attempt at making the platform drop after player leaves -> //&& place_meeting(x, y - follow_target.vertical_speed, follow_target
+	if (follow_target != noone && instance_exists(follow_target) && follow_target.bbox_bottom <= bbox_top + 2 && follow_target.bbox_right > bbox_left && follow_target.bbox_left < bbox_right)
 	{
 		can_reset = false;
 		is_following = true;
@@ -95,18 +93,34 @@ function checkToFollow()
 	else
 	{
 	    follow_target = noone;
+		is_falling = true;
 	}
 }
 
 function checkFalling()
 {
-    // Start falling after second jump
-	if (is_falling)
-	{
-		can_reset = true;
-		vertical_speed += grav;
-		y += vertical_speed;
-		y = round(y)
+    // Start falling after second jump or any other trigger
+    if (is_falling)
+    {
+        can_reset = true;
+        vertical_speed += grav;
+
+        if (!place_meeting(x, y + vertical_speed, oWall))
+        {
+            y += vertical_speed;
+            y = round(y);
+        }
+        else
+        {
+            // Snap to the ground
+            while (!place_meeting(x, y + sign(vertical_speed), oWall))
+            {
+                y += sign(vertical_speed);
+            }
+
+            vertical_speed = 0;
+            is_falling = false;
+        }
     }
 }
 

@@ -58,6 +58,7 @@ function checkYcollision()
 			if (inst.object_index==oWall.object_index || (inst.object_index == oMoveableWall.object_index && inst.is_following == false)) // ignores collision for instances that are following, but keeps track of oWalls
 			{
 				y = inst.bbox_top - (bbox_bottom - y);
+				//                       215
 				vertical_speed = 0;
 			}
 		}

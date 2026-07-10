@@ -9,13 +9,6 @@ function stop()
 	show_debug_message("pausing");
 }
 
-function resetObject()
-{
-	y = y_start;
-	x = x_start;
-	setMovingPlatformVariables();
-}
-
 function yCollisionPlatform()
 {
 	if on_ground
@@ -56,7 +49,7 @@ function checkOnGround()
 	}
 }
 
-function followXAxis()
+function followEdgeXAxis()
 {		
 	var player_left = follow_target.bbox_left;
 	var player_right = follow_target.bbox_right;
@@ -79,30 +72,53 @@ function followXAxis()
 	return x;
 }
 
-function checkToFollow()
-{	
-	// Follow player if attached and if it's still above
-	if (follow_target != noone && instance_exists(follow_target) && follow_target.bbox_bottom <= bbox_top + 2 && follow_target.bbox_right > bbox_left && follow_target.bbox_left < bbox_right)
+function startFollowing(following_id, following_bottom)
+{
+	follow_target = following_id;
+	follow_offset = y - following_bottom //storing the original gap of the center of the platform relative to player
+}
+
+function startFalling(player_speed=0)
+{
+	follow_target = noone;
+	is_falling = true;
+	if player_speed > 0 && player_speed > fall_speed
 	{
-		can_reset = false;
-		is_following = true;
-		y = follow_target.bbox_bottom + follow_offset;
-		//x = follow_target.x;
-		//x = followXAxis();
+		vertical_speed = player_speed + fall_speed; //so that speed is maintained after following
 	}
 	else
 	{
-	    follow_target = noone;
-		is_falling = true;
+		vertical_speed = fall_speed;
 	}
 }
 
-function checkFalling()
+function main()
 {
-    // Start falling after second jump or any other trigger
-    if (is_falling)
+	// following player
+	var tolerance = 2; //to continue follow with some slack
+	if follow_target != noone
+	{
+		tolerance = abs(follow_target.vertical_speed) + 2; 
+	}
+	
+	// Follow player if attached 
+	// if it's still above -> && follow_target.bbox_bottom <= bbox_top + tolerance && follow_target.bbox_right > bbox_left && follow_target.bbox_left < bbox_right)
+	if (follow_target != noone && instance_exists(follow_target) && follow_target.platform = id)
+	{
+		is_following = true;
+		y = follow_target.bbox_bottom + follow_offset;
+		//x = follow_target.x;
+		//x = followEdgeXAxis();
+	}
+	else
+	{
+		is_falling = true;
+	    follow_target = noone;
+	}
+	
+	// falling
+	if (is_falling)
     {
-        can_reset = true;
         vertical_speed += grav;
 
         if (!place_meeting(x, y + vertical_speed, oWall))
@@ -113,33 +129,18 @@ function checkFalling()
         else
         {
             // Snap to the ground
-            while (!place_meeting(x, y + sign(vertical_speed), oWall))
+            while (!place_meeting(x, y + sign(vertical_speed), oWall)) //while we're still not touching exactly, get to a point where we are
             {
                 y += sign(vertical_speed);
             }
 
             vertical_speed = 0;
             is_falling = false;
+			resetObject();
         }
     }
-}
-
-function startFollowing(following_id, following_bottom)
-{
-	follow_target = following_id;
-	follow_offset = y - following_bottom //storing the original gap of the center of the platform relative to player
-}
-
-function startFalling()
-{
-	follow_target = noone;
-	is_falling = true;
-}
-
-function main()
-{
-	checkToFollow();
-	checkFalling();
+	
+	
 	//checkOnGround();
 	
 	//obj_platform = oWall

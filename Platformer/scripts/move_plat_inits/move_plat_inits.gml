@@ -13,8 +13,18 @@ function setMovingPlatformVariables(){
 	is_falling = false;
 	platform = noone;
 	vertical_speed = 0;
+	fall_speed = 2;
 
 	walk_speed = 4;
 	obj_platform = oWall;
 	grav = 0.6;
+}
+
+function resetObject()
+{
+	y_start = y;
+	x_start = x; 
+	y = y_start;
+	x = x_start;
+	setMovingPlatformVariables();
 }

@@ -32,16 +32,20 @@ function checkOnGround()
 
     var inst = instance_place(x, y + 1, obj_platform);
 	
-    if (inst!=noone && inst.object_index == oMoveableWall.object_index && !inst.is_following)
-    {
-        on_ground = true;
-        platform = inst;
-    }
-	else if (inst != noone)
+    //if (inst!=noone && inst.object_index == oMoveableWall.object_index && !inst.is_following)
+    //{
+    //    on_ground = true;
+    //    platform = inst;
+    //}
+	if (inst != noone)
 	{
         on_ground = true;
         platform = inst;
 	}
+	//else if platform != noone || platform != inst
+	//{
+	//	platform.startFalling();
+	//}
 }
 
 function checkYcollision()
@@ -54,11 +58,10 @@ function checkYcollision()
     {
 		if (vertical_speed > 0) // Falling
 		{
-			// Snap to platform top
-			if (inst.object_index==oWall.object_index || (inst.object_index == oMoveableWall.object_index && inst.is_following == false)) // ignores collision for instances that are following, but keeps track of oWalls
+			// Snap to oWall top. Ignores collision for instances following player, to leavve collision up to the platform
+			if (inst.object_index==oWall.object_index || (inst.object_index == oMoveableWall.object_index && inst.is_following == false)) // 
 			{
-				y = inst.bbox_top - (bbox_bottom - y);
-				//                       215
+				y = inst.bbox_top - (bbox_bottom - y); //setting origin to be (bbox_bottom - y = 8) pixels away from platform below
 				vertical_speed = 0;
 			}
 		}
@@ -80,14 +83,14 @@ function firstJump(plat_inst)
 
 function secondJump(plat_inst)
 {
-	plat_inst.startFalling();
+	plat_inst.startFalling(vertical_speed);
 	vertical_speed = jump_speed - 0.5; //second jump is a little higher
 }
 
 
 function checkJumping()
 {
-	if (on_ground && keyboard_check_pressed(vk_up)) 
+	if (on_ground && keyboard_check_pressed(vk_up))
 	{
 	    // Only allow jump-follow if standing on the special platform
 	    if (platform != noone && platform.object_index == oMoveableWall.object_index)
@@ -107,7 +110,6 @@ function checkJumping()
 	    {
 	        // Normal jump from regular platform
 	        vertical_speed = jump_speed;
-			//platform.jump_count=0; //shouldnt really need this
 	        platform = noone;
 	    }
 	}
@@ -118,7 +120,6 @@ function checkJumping()
 function main()
 {
 	escReset();
-	obj_platform = oWall
 
 	//-1 for left, 0 for nothing, 1 for right
 	var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);

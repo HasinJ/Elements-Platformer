@@ -4,3 +4,4 @@ jump_speed = -9;
 on_ground = false;
 walk_speed = 4;
 platform = noone;
+obj_platform = oWall

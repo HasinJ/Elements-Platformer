@@ -51,6 +51,7 @@ function checkOnGround()
 
 function followEdgeXAxis()
 {		
+	//might be deprecated, this was for x-following only when the player is moving past edge of platform
 	var player_left = follow_target.bbox_left;
 	var player_right = follow_target.bbox_right;
 	var margin = 0.5; //to offset and trigger action before collision gets tight
@@ -72,10 +73,11 @@ function followEdgeXAxis()
 	return x;
 }
 
-function startFollowing(following_id, following_bottom)
+function startFollowing(following_id)
 {
 	follow_target = following_id;
-	follow_offset = y - following_bottom //storing the original gap of the center of the platform relative to player
+	y_follow_offset = y - follow_target.bbox_bottom //storing the original gap of the center of the platform relative to player
+	x_follow_offset = x - follow_target.x;	//storing original x-gap, player should be greater or equal most of the time
 }
 
 function startFalling(player_speed=0)
@@ -106,9 +108,11 @@ function main()
 	if (follow_target != noone && instance_exists(follow_target) && follow_target.platform = id)
 	{
 		is_following = true;
-		y = follow_target.bbox_bottom + follow_offset;
-		//x = follow_target.x;
-		//x = followEdgeXAxis();
+		// y value stuff
+		y = follow_target.bbox_bottom + y_follow_offset;
+		
+		// x value stuff
+		x = follow_target.x + x_follow_offset;
 	}
 	else
 	{

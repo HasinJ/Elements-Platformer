@@ -77,7 +77,7 @@ function checkYcollision()
 function firstJump(plat_inst)
 {
 	// Tell platform to follow player
-	plat_inst.startFollowing(id, bbox_bottom);
+	plat_inst.startFollowing(id);
 	vertical_speed = jump_speed;
 }
 
@@ -133,6 +133,7 @@ function main()
 	// X collision
 	checkXcollision();
 	x += horizontal_speed;
+	x = round(x);
 
 	// Y collision
 	// 1. Vertical speed needs to be applied before collision actually happens, can't be too late colliding

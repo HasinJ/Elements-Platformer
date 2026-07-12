@@ -7,7 +7,8 @@ function setMovingPlatformVariables(){
 	//reset variables
 	on_ground = false;
 	follow_target = noone;
-	follow_offset = 0;
+	y_follow_offset = 0;
+	x_follow_offset = 0;
 	jump_count = 0;
 	is_following = false;
 	is_falling = false;

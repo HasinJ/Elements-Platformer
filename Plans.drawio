@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0" version="29.5.2" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0" pages="2">
   <diagram name="Page-1" id="BnbvyaOT_vO8Rth5V9e3">
-    <mxGraphModel dx="1684" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2371" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -29,7 +29,7 @@
         <mxCell id="A49KD2nKRxiiyZH7kdmM-34" parent="A49KD2nKRxiiyZH7kdmM-32" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Objective constantly changes&lt;br&gt;&lt;div&gt;- Carry obj&lt;/div&gt;&lt;div&gt;- Kill obj&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="350" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" parent="A49KD2nKRxiiyZH7kdmM-32" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Slow motion timer when controlling objects&lt;/li&gt;&lt;li&gt;&amp;nbsp;Using one stick for character and another stick for moving elements&lt;/li&gt;&lt;li&gt;instead of having another input, when the character goes near the element, that element&#39;s attribute affects the character&lt;/li&gt;&lt;li&gt;earth is grabbable&lt;/li&gt;&lt;ul&gt;&lt;li&gt;earth lets you lift with it, and then actually jump off, simulating double jump,&amp;nbsp;&lt;/li&gt;&lt;li&gt;jump is active by default&lt;/li&gt;&lt;li&gt;pressing down pushed earth down&lt;/li&gt;&lt;li&gt;defensive stance&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;water is grabbable&lt;/li&gt;&lt;ul&gt;&lt;li&gt;spits from legs/mouth forward&lt;/li&gt;&lt;li&gt;debuff stance&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Air is evasive stance&lt;/li&gt;&lt;li&gt;Fire is DOT stance&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;attack mode&lt;/li&gt;&lt;ul&gt;&lt;li&gt;water slices, like a sword&lt;/li&gt;&lt;li&gt;earth moves things around&lt;/li&gt;&lt;li&gt;air pushes back&lt;/li&gt;&lt;li&gt;fire shoots and burns&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" vertex="1">
+        <mxCell id="A49KD2nKRxiiyZH7kdmM-35" parent="A49KD2nKRxiiyZH7kdmM-32" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Slow motion timer when controlling objects&lt;/li&gt;&lt;li&gt;&amp;nbsp;Using one stick for character and another stick for moving elements&lt;/li&gt;&lt;li&gt;instead of having another input, when the character goes near the element, that element&#39;s attribute affects the character&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;water is grabbable&lt;/li&gt;&lt;ul&gt;&lt;li&gt;spits from legs/mouth forward&lt;/li&gt;&lt;li&gt;debuff stance&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Air is evasive stance&lt;/li&gt;&lt;li&gt;Fire is DOT stance&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;attack mode&lt;/li&gt;&lt;ul&gt;&lt;li&gt;water slices, like a sword&lt;/li&gt;&lt;li&gt;earth moves things around&lt;/li&gt;&lt;li&gt;air pushes back&lt;/li&gt;&lt;li&gt;fire shoots and burns&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" vertex="1">
           <mxGeometry height="440" width="350" y="120" as="geometry" />
         </mxCell>
         <mxCell id="A49KD2nKRxiiyZH7kdmM-39" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
@@ -110,6 +110,38 @@
         </mxCell>
         <mxCell id="gzNmikJlvF1EsS_GcAot-3" parent="A49KD2nKRxiiyZH7kdmM-54" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="Extend/Jump" vertex="1">
           <mxGeometry height="30" width="90" x="360" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Earth&lt;/div&gt;" vertex="1">
+          <mxGeometry height="470" width="350" x="-450" y="770" as="geometry">
+            <mxRectangle height="30" width="120" x="-825" y="640" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-4" parent="0w5Cd0JNbqC4bOQ2utRc-1" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ol&gt;&lt;li&gt;grab earth just to double jump, straight up&lt;/li&gt;&lt;li&gt;grab earth and rotate it to jump again in a direction&lt;/li&gt;&lt;li&gt;grab earth and rotate with WD to jump again&lt;/li&gt;&lt;li&gt;multiple objects to do similar movement on&lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Attack&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;releasing object with momentum damages&lt;/li&gt;&lt;li&gt;defensive, so does blocking actions&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="440" width="350" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-5" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Water&lt;/div&gt;" vertex="1">
+          <mxGeometry height="470" width="350" x="-70" y="770" as="geometry">
+            <mxRectangle height="30" width="120" x="-825" y="640" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-6" parent="0w5Cd0JNbqC4bOQ2utRc-5" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ol&gt;&lt;li&gt;grab water to evade&lt;/li&gt;&lt;li&gt;grab water to slide/stick&lt;/li&gt;&lt;li&gt;grab water to climb&lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Attack&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;debuff stance&amp;nbsp;can slow/stun whatever&lt;/li&gt;&lt;li&gt;sword&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="440" width="350" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-7" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Air&lt;/div&gt;" vertex="1">
+          <mxGeometry height="470" width="350" x="320" y="770" as="geometry">
+            <mxRectangle height="30" width="120" x="-825" y="640" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-8" parent="0w5Cd0JNbqC4bOQ2utRc-7" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ol&gt;&lt;li&gt;grab air to evade&amp;nbsp;&lt;/li&gt;&lt;li&gt;grab air to fly/levitate/stick&lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Attack&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;if released at the end, pushes then does damage&lt;/li&gt;&lt;li&gt;evasive, so dodging/invuln&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="440" width="350" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-9" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Fire" vertex="1">
+          <mxGeometry height="470" width="350" x="710" y="770" as="geometry">
+            <mxRectangle height="30" width="120" x="-825" y="640" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0w5Cd0JNbqC4bOQ2utRc-10" parent="0w5Cd0JNbqC4bOQ2utRc-9" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Movement&lt;/div&gt;&lt;ol&gt;&lt;li&gt;upward movement, not sure right now&lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Attack&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;if released at the end, burns/dot&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="440" width="350" y="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

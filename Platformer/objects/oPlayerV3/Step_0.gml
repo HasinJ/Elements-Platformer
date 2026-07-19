@@ -56,6 +56,7 @@ function checkYcollision()
 	var inst = instance_place(x, y + vertical_speed, obj_platform);
     if (inst != noone)
     {
+		print(object_get_name(inst.object_index));
 		if (vertical_speed > 0) // Falling
 		{
 			// Snap to oWall top. Ignores collision for instances following player, to leavve collision up to the platform
@@ -65,12 +66,13 @@ function checkYcollision()
 				vertical_speed = 0;
 			}
 		}
-		else if (vertical_speed < 0) // Hitting ceiling
-		{
-			// Snap below platform
-			y = inst.bbox_bottom + (y - bbox_top);
-			vertical_speed = 0;
-		}
+		// Hitting ceiling. Ignores collision for instances following
+		//else if (vertical_speed < 0)  
+		//{ 
+		//	 Snap below platform
+		//	y = inst.bbox_bottom + (y - bbox_top);
+		//	vertical_speed = 0;
+		//}
     }
 }
 
@@ -129,6 +131,9 @@ function main()
 	    vertical_speed += grv * 0.7;
 	else					// downwards motion
 	    vertical_speed += grv;
+	
+	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+	image_angle += rotat_dir * base_rotational_speed;
 	
 	// X collision
 	checkXcollision();

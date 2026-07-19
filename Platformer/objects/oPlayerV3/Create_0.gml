@@ -5,3 +5,5 @@ on_ground = false;
 walk_speed = 4;
 platform = noone;
 obj_platform = oWall
+rotational_speed = 0;
+base_rotational_speed = 2;

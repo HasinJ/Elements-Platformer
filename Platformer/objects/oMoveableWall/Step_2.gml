@@ -108,11 +108,11 @@ function main()
 	if (follow_target != noone && instance_exists(follow_target) && follow_target.platform = id)
 	{
 		is_following = true;
-		// y value stuff
-		y = follow_target.bbox_bottom + y_follow_offset;
-		
-		// x value stuff
-		x = follow_target.x + x_follow_offset;
+		var attach_dist = (follow_target.sprite_height / 2) + (sprite_height / 2); //the distance of the two platforms is just made up of both their centers
+		// just attach_dist itself doesn't work, it needs angle
+		x = follow_target.x + lengthdir_x(attach_dist, image_angle - 90); // lengthdir helps find distance between two objects, with direction in mind
+		y = follow_target.y + lengthdir_y(attach_dist, image_angle - 90);
+		image_angle = follow_target.image_angle;
 	}
 	else
 	{

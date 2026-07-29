@@ -48,6 +48,7 @@ function checkOnGround()
 	//}
 }
 
+
 function checkYcollision()
 {
     // Check collision before reaching target
@@ -56,7 +57,6 @@ function checkYcollision()
 	var inst = instance_place(x, y + vertical_speed, obj_platform);
     if (inst != noone)
     {
-		print(object_get_name(inst.object_index));
 		if (vertical_speed > 0) // Falling
 		{
 			// Snap to oWall top. Ignores collision for instances following player, to leavve collision up to the platform
@@ -76,17 +76,22 @@ function checkYcollision()
     }
 }
 
-function firstJump(plat_inst)
+function firstJump(plat_inst=noone)
 {
 	// Tell platform to follow player
-	plat_inst.startFollowing(id);
-	vertical_speed = jump_speed;
+	if plat_inst!=noone
+	{
+		plat_inst.startFollowing(id);
+	}
+	//vertical_speed = jump_speed;
+	vertical_speed = lengthdir_y(jump_speed, image_angle - 90); 
 }
 
 function secondJump(plat_inst)
 {
 	plat_inst.startFalling(vertical_speed);
-	vertical_speed = jump_speed - 0.5; //second jump is a little higher
+	//vertical_speed = jump_speed - 0.5; 
+	vertical_speed = lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
 }
 
 
@@ -111,8 +116,8 @@ function checkJumping()
 	    else if (platform != noone) //normal jump
 	    {
 	        // Normal jump from regular platform
-	        vertical_speed = jump_speed;
 	        platform = noone;
+			firstJump(platform);
 	    }
 	}
 }

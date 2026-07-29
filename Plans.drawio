@@ -147,7 +147,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="A8arWtcLr7z0lA4roJUY" name="story">
-    <mxGraphModel dx="1042" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="698" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -299,6 +299,9 @@
         </mxCell>
         <mxCell id="GB8x8YLOQCfWCGr5tR0j-47" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="Everything&#39;s temporary, leave a permanent mark, and live in the present." vertex="1">
           <mxGeometry height="30" width="400" x="190" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="VQyL8MuuSBphWM4e23KF-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Random ideas&lt;/h1&gt;&lt;div&gt;Starting cutscene player falling out of sky&lt;/div&gt;&lt;div&gt;Player moves forward, small flash shows, player can now only move left for to go back to where the small flash shows&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="440" x="1920" y="450" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

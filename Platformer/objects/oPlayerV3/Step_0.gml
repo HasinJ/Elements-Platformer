@@ -11,6 +11,11 @@ function escReset()
 		print("\n\n\n New Room:");
 		room_restart();
 	}
+	if keyboard_check_pressed(vk_control)
+	{
+		print("put debugger breakpoint here");
+	}
+	
 }
 
 function checkXcollision()
@@ -31,21 +36,12 @@ function checkOnGround()
     platform = noone;
 
     var inst = instance_place(x, y + 1, obj_platform);
-	
-    //if (inst!=noone && inst.object_index == oMoveableWall.object_index && !inst.is_following)
-    //{
-    //    on_ground = true;
-    //    platform = inst;
-    //}
 	if (inst != noone)
 	{
         on_ground = true;
         platform = inst;
+		jump_count=0;
 	}
-	//else if platform != noone || platform != inst
-	//{
-	//	platform.startFalling();
-	//}
 }
 
 
@@ -66,6 +62,7 @@ function checkYcollision()
 				vertical_speed = 0;
 			}
 		}
+		// Commenting this out for now, need to work out other functions, this kind of gets in the way
 		// Hitting ceiling. Ignores collision for instances following
 		//else if (vertical_speed < 0)  
 		//{ 
@@ -84,14 +81,22 @@ function firstJump(plat_inst=noone)
 		plat_inst.startFollowing(id);
 	}
 	//vertical_speed = jump_speed;
-	vertical_speed = lengthdir_y(jump_speed, image_angle - 90); 
+	vertical_speed = lengthdir_y(-jump_speed, image_angle - 90); 
+	on_ground = false;
 }
 
-function secondJump(plat_inst)
+function secondJump(plat_inst=noone)
 {
-	plat_inst.startFalling(vertical_speed);
-	//vertical_speed = jump_speed - 0.5; 
-	vertical_speed = lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
+	if plat_inst!=noone
+	{
+		plat_inst.startFalling(vertical_speed);
+	}
+	//vertical_speed = jump_speed - 0.5;
+	print("image angle:");
+	print(image_angle);
+	vertical_speed = -lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
+	horizontal_speed = -lengthdir_x(jump_speed, image_angle - 90);
+	on_ground = false;
 }
 
 
@@ -107,22 +112,29 @@ function checkJumping()
 			{
 				firstJump(platform);
 			}
-
 			else if platform.jump_count >= 2
 			{
 				secondJump(platform);
 			} 
 	    }
+
 	    else if (platform != noone) //normal jump
 	    {
 	        // Normal jump from regular platform
 	        platform = noone;
 			firstJump(platform);
+			jump_count=1;
 	    }
 	}
+	
+	// NEED TO REMOVE, JUST TESTING PURPOSES
+	else if (jump_count=1 && keyboard_check_pressed(vk_up))
+	{
+	    platform = noone;
+		secondJump();
+		jump_count=0;
+	}
 }
-
-
 	
 function main()
 {
@@ -130,11 +142,14 @@ function main()
 
 	//-1 for left, 0 for nothing, 1 for right
 	var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
-	horizontal_speed = move_dir * walk_speed
-	
-	if (vertical_speed < 0) // upwards motion (lower # means = more float)
+	if move_dir != 0
+	{
+		horizontal_speed = move_dir * walk_speed
+	}
+
+	if (vertical_speed < 0)           // upwards motion (lower # means = more float)
 	    vertical_speed += grv * 0.7;
-	else					// downwards motion
+	else					          // downwards motion
 	    vertical_speed += grv;
 	
 	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
@@ -142,8 +157,7 @@ function main()
 	
 	// X collision
 	checkXcollision();
-	x += horizontal_speed;
-	x = round(x);
+
 
 	// Y collision
 	// 1. Vertical speed needs to be applied before collision actually happens, can't be too late colliding
@@ -154,6 +168,18 @@ function main()
 	checkOnGround();
 	checkJumping();
 	
+	// X launching
+	// TODO: Terminal velocity   = sliding
+	// TODO: move_dir!=0         = gravity like pull to cancel out sliding as a result
+    if (keyboard_check_released(vk_right) || keyboard_check_released(vk_left))
+	{
+		horizontal_speed = move_dir * walk_speed;
+		if (on_ground && move_dir==0)
+			horizontal_speed=0;
+	}
+	
+	x += horizontal_speed;
+	x = round(x);
 	y += vertical_speed;
 	y = round(y)
 }

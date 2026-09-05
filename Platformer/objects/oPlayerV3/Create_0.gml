@@ -1,7 +1,7 @@
 vertical_speed = 0;
 horizontal_speed = 0;
-grv = 0.6;
-jump_speed = 9;
+grv = 0.1; //0.6
+jump_speed = 4;
 jump_count=0;
 on_ground = false;
 walk_speed = 4;

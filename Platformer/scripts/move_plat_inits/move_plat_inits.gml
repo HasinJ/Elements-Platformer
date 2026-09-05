@@ -11,7 +11,6 @@ function setMovingPlatformVariables(){
 	x_follow_offset = 0;
 	jump_count = 0;
 	is_following = false;
-	is_falling = false;
 	platform = noone;
 	vertical_speed = 0;
 	fall_speed = 2;
@@ -19,6 +18,7 @@ function setMovingPlatformVariables(){
 	walk_speed = 4;
 	obj_platform = oWall;
 	grav = 0.6;
+	pixel_instance = noone;
 }
 
 function resetObject()

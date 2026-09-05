@@ -22,6 +22,7 @@
     {"name":"oCursor","order":1,"path":"objects/oCursor/oCursor.yy",},
     {"name":"oFireBall","order":6,"path":"objects/oFireBall/oFireBall.yy",},
     {"name":"oMoveableWall","order":7,"path":"objects/oMoveableWall/oMoveableWall.yy",},
+    {"name":"oPixel","order":15,"path":"objects/oPixel/oPixel.yy",},
     {"name":"oPlatform","order":13,"path":"objects/oPlatform/oPlatform.yy",},
     {"name":"oPlayer","order":3,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oPlayerV2","order":11,"path":"objects/oPlayerV2/oPlayerV2.yy",},

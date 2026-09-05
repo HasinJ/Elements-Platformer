@@ -83,7 +83,6 @@ function startFollowing(following_id)
 function startFalling(player_speed=0)
 {
 	follow_target = noone;
-	is_falling = true;
 	if player_speed > 0 && player_speed > fall_speed
 	{
 		vertical_speed = player_speed + fall_speed; //so that speed is maintained after following
@@ -110,25 +109,39 @@ function main()
 		is_following = true;
 		var attach_dist = (follow_target.sprite_height / 2) + (sprite_height / 2); //the distance of the two platforms is just made up of both their centers
 		// just attach_dist itself doesn't work, it needs angle
+		// image_angle - 90 because it makes sprite match the direction of game physics
 		x = follow_target.x + lengthdir_x(attach_dist, image_angle - 90); // lengthdir helps find distance between two objects, with direction in mind
 		y = follow_target.y + lengthdir_y(attach_dist, image_angle - 90);
 		image_angle = follow_target.image_angle;
 	}
-	else
+	else if follow_target == noone || !instance_exists(follow_target)
 	{
-		is_falling = true;
-	    follow_target = noone;
+		//if !place_meeting(x, y + vertical_speed, oWall)
+		//{
+		//	is_falling = true;
+		//	if pixel_instance == noone
+		//	{
+		//		pixel_instance = instance_create_layer(x, y + vertical_speed, "Instances", oPixel);
+		//	}
+		//	else
+		//	{
+		//		pixel_instance.y = y+vertical_speed;
+		//	}
+		//}
+		is_following = false;
 	}
 	
 	// falling
-	if (is_falling)
+	if (is_following == false)
     {
         vertical_speed += grav;
+		y_length = lengthdir_y(vertical_speed, image_angle - 90);
 
-        if (!place_meeting(x, y + vertical_speed, oWall))
+        if (!place_meeting(x, y + y_length, oWall))
         {
-            y += vertical_speed;
+            y += y_length;
             y = round(y);
+			
         }
         else
         {

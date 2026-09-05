@@ -55,7 +55,7 @@ function checkYcollision()
     {
 		if (vertical_speed > 0) // Falling
 		{
-			// Snap to oWall top. Ignores collision for instances following player, to leavve collision up to the platform
+			// Snap to oWall top. Ignores collision for instances following player, to leave collision up to the platform
 			if (inst.object_index==oWall.object_index || (inst.object_index == oMoveableWall.object_index && inst.is_following == false)) // 
 			{
 				y = inst.bbox_top - (bbox_bottom - y); //setting origin to be (bbox_bottom - y = 8) pixels away from platform below
@@ -82,7 +82,7 @@ function firstJump(plat_inst=noone)
 	}
 	//vertical_speed = jump_speed;
 	vertical_speed = lengthdir_y(-jump_speed, image_angle - 90); 
-	on_ground = false;
+	on_ground = false; // need to tell we're not on ground
 }
 
 function secondJump(plat_inst=noone)
@@ -94,11 +94,10 @@ function secondJump(plat_inst=noone)
 	//vertical_speed = jump_speed - 0.5;
 	print("image angle:");
 	print(image_angle);
-	vertical_speed = -lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
+	vertical_speed   = -lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
 	horizontal_speed = -lengthdir_x(jump_speed, image_angle - 90);
-	on_ground = false;
+	on_ground = false; // this is so that for this frame, horizontal speed isnt getting reset
 }
-
 
 function checkJumping()
 {
@@ -135,6 +134,12 @@ function checkJumping()
 		jump_count=0;
 	}
 }
+
+function checkRotation()
+{
+	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+	image_angle += rotat_dir * base_rotational_speed;
+}
 	
 function main()
 {
@@ -144,7 +149,7 @@ function main()
 	var move_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 	if move_dir != 0
 	{
-		horizontal_speed = move_dir * walk_speed
+		horizontal_speed = move_dir * walk_speed;
 	}
 
 	if (vertical_speed < 0)           // upwards motion (lower # means = more float)
@@ -152,30 +157,29 @@ function main()
 	else					          // downwards motion
 	    vertical_speed += grv;
 	
-	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
-	image_angle += rotat_dir * base_rotational_speed;
-	
 	// X collision
 	checkXcollision();
 
-
 	// Y collision
-	// 1. Vertical speed needs to be applied before collision actually happens, can't be too late colliding
-	// 2. Scoot to whatever is next to it
-	// 3. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
-	// 4. Can now jump after checking on ground and scooted
+	// Vertical speed needs to be applied (NOT Y POS) before collision actually happens, can't be too late colliding
+	// 1. Scoot to whatever is next to it
+	// 2. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
+	// 3. Can now jump after checking on ground and scooted
+	// 4. MAY NEED TO ADD FALLING STATEd
 	checkYcollision();
 	checkOnGround();
 	checkJumping();
+	checkRotation();
 	
-	// X launching
+    // X launching
 	// TODO: Terminal velocity   = sliding
 	// TODO: move_dir!=0         = gravity like pull to cancel out sliding as a result
-    if (keyboard_check_released(vk_right) || keyboard_check_released(vk_left))
+	if move_dir == 0
 	{
-		horizontal_speed = move_dir * walk_speed;
-		if (on_ground && move_dir==0)
+	    if (keyboard_check_released(vk_right) || keyboard_check_released(vk_left) || (on_ground))
+		{
 			horizontal_speed=0;
+		}
 	}
 	
 	x += horizontal_speed;

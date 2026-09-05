@@ -137,8 +137,16 @@ function checkJumping()
 
 function checkRotation()
 {
-	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
-	image_angle += rotat_dir * base_rotational_speed;
+	if platform != noone && platform.object_index == oMoveableWall
+	{
+		var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+		rotation_speed += rotat_dir * base_rotational_speed;
+	}
+	else if platform == noone && image_angle != 0
+	{
+		var difference = angle_difference(0, image_angle); //distance to move to
+		rotation_speed += clamp(difference, -5, 5);		   //only move at a max of 5 units
+	}
 }
 	
 function main()
@@ -165,7 +173,7 @@ function main()
 	// 1. Scoot to whatever is next to it
 	// 2. Check if on ground after scooting, that way it's more precise to whatever it's scooted to
 	// 3. Can now jump after checking on ground and scooted
-	// 4. MAY NEED TO ADD FALLING STATEd
+	// 4. MAY NEED TO ADD FALLING STATE
 	checkYcollision();
 	checkOnGround();
 	checkJumping();
@@ -186,6 +194,8 @@ function main()
 	x = round(x);
 	y += vertical_speed;
 	y = round(y)
+	image_angle += rotation_speed;
+	rotation_speed=0;
 }
 
 main();

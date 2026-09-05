@@ -23,9 +23,8 @@ function setMovingPlatformVariables(){
 
 function resetObject()
 {
-	y_start = y;
-	x_start = x; 
 	y = y_start;
 	x = x_start;
+	image_angle = 0;
 	setMovingPlatformVariables();
 }

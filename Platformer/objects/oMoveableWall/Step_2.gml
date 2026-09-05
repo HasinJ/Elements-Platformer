@@ -1,7 +1,7 @@
 
 function print(msg)
 {
-	show_debug_message(msg);
+	show_debug_message($"Instance: {instance_id}\n" + string(msg));
 }
 
 function stop()
@@ -141,7 +141,6 @@ function main()
         {
             y += y_length;
             y = round(y);
-			
         }
         else
         {
@@ -150,10 +149,22 @@ function main()
             {
                 y += sign(vertical_speed);
             }
+			if place_meeting(x, y + sign(vertical_speed), oWall)
+			{
+				if first_time_grounded == true
+				{
+					print($"setting starting x to be: {x} \nsetting starting y to be {y} ");
+					y_start = y;
+					x_start = x;
+					first_time_grounded = false;
+				}
+				
+				resetObject();
+			}
 
             vertical_speed = 0;
             is_falling = false;
-			resetObject();
+			//resetObject();
         }
     }
 	

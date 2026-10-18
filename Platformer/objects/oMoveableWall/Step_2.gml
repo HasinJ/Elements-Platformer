@@ -1,7 +1,7 @@
 
 function print(msg)
 {
-	show_debug_message($"Instance: {instance_id}\n" + string(msg));
+	show_debug_message($"Instance: {id}\n" + string(msg));
 }
 
 function stop()
@@ -153,7 +153,6 @@ function main()
 			{
 				if first_time_grounded == true
 				{
-					print($"setting starting x to be: {x} \nsetting starting y to be {y} ");
 					y_start = y;
 					x_start = x;
 					first_time_grounded = false;

@@ -1,14 +1,13 @@
 
 function print(msg)
 {
-	show_debug_message($"Obj: {id}\n" + string(msg));
+	show_debug_message(msg);
 }
 
 function escReset()
 {
 	if keyboard_check_pressed(vk_escape)
 	{
-		print(image_angle);
 		print("\n\n\n New Room:");
 		room_restart();
 	}
@@ -93,6 +92,8 @@ function secondJump(plat_inst=noone)
 		plat_inst.startFalling(vertical_speed);
 	}
 	//vertical_speed = jump_speed - 0.5;
+	print("image angle:");
+	print(image_angle);
 	vertical_speed   = -lengthdir_y(jump_speed - 0.5, image_angle - 90); //second jump is a little higher
 	horizontal_speed = -lengthdir_x(jump_speed, image_angle - 90);
 	on_ground = false; // this is so that for this frame, horizontal speed isnt getting reset
@@ -136,28 +137,15 @@ function checkJumping()
 
 function checkRotation()
 {
-	//var test_check = keyboard_check_released(ord("F"));
-	var test_check = true;
-	var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
-	//var rotat_dir = keyboard_check_released(ord("A")) - keyboard_check_released(ord("D"));
-	rotation_speed += rotat_dir * base_rotational_speed;
 	if platform != noone && platform.object_index == oMoveableWall
 	{
-		print("");
+		var rotat_dir = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+		rotation_speed += rotat_dir * base_rotational_speed;
 	}
-
-	else if platform == noone && image_angle != 0 && test_check
+	else if platform == noone && image_angle != 0
 	{
-		var temp = image_angle;
-		if sign(temp) == -1
-		{
-			temp = -(temp);
-		}
-		
-		var difference = angle_difference(0, temp); //distance to move to
-		print(difference);
-		rotation_speed += clamp(difference, -20, 20);		   //only move at a max of 5 units
-		//print(rotation_speed);
+		var difference = angle_difference(0, image_angle); //distance to move to
+		rotation_speed += clamp(difference, -5, 5);		   //only move at a max of 5 units
 	}
 }
 	
@@ -198,14 +186,9 @@ function main()
 	{
 	    if (keyboard_check_released(vk_right) || keyboard_check_released(vk_left) || (on_ground))
 		{
-			//print("setting horizontal speed to 0");
 			horizontal_speed=0;
 		}
 	}
-	//else
-	//{
-	//	print($"horizontal speed: {horizontal_speed}")
-	//}
 	
 	x += horizontal_speed;
 	x = round(x);

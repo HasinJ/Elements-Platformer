@@ -32,11 +32,27 @@ if (-1 <= move_dir <= 1)
 y_dist += grav;
 if (y_dist > y_speed_cap){y_dist = y_speed_cap;}
 
-if(up_key_pressed && place_meeting(x, y+1, oWall))
+if up_key_pressed
+{
+	jump_buffer_time = buffer_time;
+}
+if jump_buffer_time > 0
+{
+	jump_buffer = true;
+	jump_buffer_time--;
+}
+else
+{
+	jump_buffer = false;
+}
+	
+
+if(jump_buffer && place_meeting(x, y+1, oWall))
 {
 	y_dist = jump_speed;	
 }
 
+//checks the place you're jumping towards
 if (place_meeting(x, y + y_dist, oWall))
 {	
 	var least_pixel_distance = .5;
@@ -47,6 +63,16 @@ if (place_meeting(x, y + y_dist, oWall))
 	}
 	y_dist = 0;
 }
+
+if (place_meeting(x, y, oMoveableWall))
+{
+	vspeed = oMoveableWall.vspeed;
+}
+else
+{
+	
+}
+	
 
 y += y_dist;
 
